@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piranha Window Cleaning | Window cleaning in Boise, ID</title>
+<meta name="description" content="Piranha Advanced Window Cleaning: locally owned window washing, gutter cleaning and pressure washing in Boise, Meridian, Nampa, Caldwell, McCall, Sun Valley and Stanley.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root {
+  --deep: #0f4c81;
+  --deep-2: color-mix(in srgb, #0f4c81 70%, #000);
+  --bite: #ffb547;
+  --glass: #eef7fd;
+  --white: #ffffff;
+  --ink: #0f2236;
+  --body: #3a4d61;
+  --muted: #687b8f;
+  --line: #d9e6f0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Sora, system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: var(--body); background: var(--glass); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--bite); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { color: var(--ink); letter-spacing: -0.035em; line-height: 1.05; font-weight: 800; }
+h2 { font-size: clamp(32px, 4.2vw, 50px); }
+h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+.demo-bar { background: var(--deep-2); color: rgba(255,255,255,.8); font-size: 13px; text-align: center; padding: 8px 24px; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px; font: inherit; font-size: 16px; font-weight: 700; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; position: relative; overflow: hidden; transition: transform .2s cubic-bezier(.3,1.6,.6,1), box-shadow .2s; }
+.btn::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform: skewX(-20deg); transition: left .6s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn:hover::after { left: 130%; }
+.btn-bite { background: var(--bite); color: var(--ink); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--bite) 80%, #000); }
+.btn-deep { background: var(--deep); color: var(--white); }
+.btn-clear { background: rgba(255,255,255,.7); color: var(--ink); box-shadow: inset 0 0 0 1.5px rgba(15,34,54,.15); backdrop-filter: blur(6px); }
+.btn-sm { height: 42px; padding: 0 18px; font-size: 14px; }
+
+/* header */
+.top { position: relative; z-index: 5; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -0.03em; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand svg { color: var(--deep); transition: transform .4s cubic-bezier(.3,1.6,.6,1); }
+.brand:hover svg { transform: translateX(4px) rotate(-8deg); }
+.nav nav { display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
+.nav nav a { text-decoration: none; color: var(--body); }
+.nav nav a:hover { color: var(--deep); }
+
+/* hero window */
+.pane { position: relative; margin: 0 16px; border-radius: 28px; overflow: hidden; isolation: isolate; min-height: 620px;
+  box-shadow: 0 0 0 10px var(--white), 0 0 0 11px var(--line), 0 40px 80px -40px rgba(15,34,54,.45); }
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.fog { position: absolute; inset: 0; z-index: 1; backdrop-filter: blur(14px) saturate(.7); -webkit-backdrop-filter: blur(14px) saturate(.7);
+  background:
+    radial-gradient(180px 120px at 18% 30%, rgba(120,100,70,.18), transparent 70%),
+    radial-gradient(240px 160px at 70% 60%, rgba(120,100,70,.16), transparent 70%),
+    radial-gradient(140px 100px at 45% 80%, rgba(120,100,70,.14), transparent 70%),
+    radial-gradient(200px 140px at 88% 22%, rgba(120,100,70,.12), transparent 70%),
+    rgba(236,242,246,.55); }
+.squeegee { position: absolute; z-index: 2; top: 6%; height: 88%; left: -40px; width: 34px; opacity: 0; pointer-events: none; }
+.squeegee .blade { position: absolute; left: 10px; top: 0; bottom: 0; width: 14px; border-radius: 7px; background: linear-gradient(90deg, #1c2733, #3d4e60); box-shadow: 6px 0 14px rgba(15,34,54,.25); }
+.squeegee .handle { position: absolute; left: -46px; top: 50%; width: 60px; height: 14px; margin-top: -7px; border-radius: 7px; background: var(--bite); }
+.squeegee .handle::before { content: ""; position: absolute; left: -36px; top: 2px; width: 40px; height: 10px; border-radius: 5px; background: #c9d4de; }
+.js .fog { animation: wipe 2s cubic-bezier(.6,.05,.3,1) .5s forwards; }
+.js .squeegee { animation: sweep 2s cubic-bezier(.6,.05,.3,1) .5s forwards; }
+html:not(.js) .fog, html:not(.js) .squeegee { display: none; }
+@keyframes wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
+@keyframes sweep { 0% { left: -40px; opacity: 1; } 94% { opacity: 1; } 100% { left: calc(100% + 10px); opacity: 0; } }
+
+.glint { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+.glint::before { content: ""; position: absolute; top: -20%; bottom: -20%; width: 18%; left: -30%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform: skewX(-18deg); }
+.js .glint::before { animation: glint 7s ease-in-out 3s infinite; }
+@keyframes glint { 0% { left: -30%; } 25%, 100% { left: 130%; } }
+
+.drip { position: absolute; z-index: 3; top: -20px; width: 7px; height: 14px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(circle at 35% 35%, #fff, rgba(255,255,255,.4) 60%, rgba(160,200,230,.35)); box-shadow: 0 1px 2px rgba(15,34,54,.15); opacity: 0; pointer-events: none; }
+.js .drip { animation: drip 6.5s cubic-bezier(.5,0,.8,.6) infinite; animation-delay: calc(2.6s + var(--k) * .9s); }
+@keyframes drip { 0% { top: -20px; opacity: 0; } 8% { opacity: .95; } 30% { top: 22%; } 60% { opacity: .9; } 100% { top: 105%; opacity: 0; } }
+
+.hero-body { position: relative; z-index: 4; display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; padding: 72px 56px 150px; }
+.hero h1 { font-size: clamp(46px, 6.4vw, 86px); max-width: 10ch; }
+.hero h1 .w { display: inline-block; }
+.js .hero h1 .w { opacity: 0; transform: translateY(26px); animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(1.6s + var(--i) * .08s); }
+.hero-sub { font-size: 19px; color: var(--body); max-width: 30em; margin-top: 22px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.js .hero-sub, .js .hero-actions, .js .card { opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; }
+.js .hero-sub { animation-delay: 2s; } .js .hero-actions { animation-delay: 2.15s; } .js .card { animation-delay: 2.35s; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+.card { background: rgba(255,255,255,.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.9); border-radius: 22px; padding: 26px; box-shadow: 0 24px 50px -24px rgba(15,34,54,.4); }
+.card small { color: var(--muted); font-size: 14px; }
+.card .phone { display: block; font-size: 32px; font-weight: 800; letter-spacing: -0.04em; text-decoration: none; color: var(--ink); margin: 2px 0 16px; }
+.card .phone:hover { color: var(--deep); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; border-top: 1px solid var(--line); padding-top: 16px; }
+.stats b { display: block; font-size: 26px; font-weight: 800; letter-spacing: -0.04em; color: var(--deep); line-height: 1.15; }
+.stats span { display: block; font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+/* scroll reveal */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--d, 0) * 100ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+.section { padding: 104px 0; }
+.section-head { max-width: 38em; margin-bottom: 48px; }
+.section-head p { color: var(--muted); font-size: 18px; margin-top: 14px; }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.svc { position: relative; overflow: hidden; background: var(--white); border-radius: 22px; padding: 32px 28px; border: 1px solid var(--line); transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; }
+.svc::before { content: ""; position: absolute; top: -10%; bottom: -10%; width: 35%; left: -50%; background: linear-gradient(100deg, transparent, rgba(159,211,247,.35), transparent); transform: skewX(-18deg); transition: left .7s ease; }
+.svc:hover { transform: translateY(-6px); box-shadow: 0 26px 44px -26px rgba(15,34,54,.45); }
+.svc:hover::before { left: 130%; }
+.svc .ico { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; background: color-mix(in srgb, #0f4c81 10%, #fff); color: var(--deep); margin-bottom: 20px; }
+.svc h3 { font-size: 22px; margin-bottom: 8px; }
+.svc p { color: var(--muted); font-size: 16px; }
+
+/* before / after */
+.compare-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: center; }
+.compare { position: relative; aspect-ratio: 16 / 10; border-radius: 22px; overflow: hidden; box-shadow: 0 0 0 8px var(--white), 0 30px 60px -30px rgba(15,34,54,.5); --pos: 50%; user-select: none; touch-action: pan-y; }
+.compare .scene { position: absolute; inset: 0; }
+.compare .dirty { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); backdrop-filter: blur(10px) saturate(.6) sepia(.25); -webkit-backdrop-filter: blur(10px) saturate(.6) sepia(.25);
+  background: radial-gradient(160px 110px at 20% 35%, rgba(110,90,60,.28), transparent 70%), radial-gradient(200px 130px at 40% 75%, rgba(110,90,60,.22), transparent 70%), rgba(225,230,226,.5); }
+.compare .divider { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 4px; margin-left: -2px; background: var(--white); box-shadow: 0 0 12px rgba(15,34,54,.3); pointer-events: none; }
+.compare .knob { position: absolute; top: 50%; left: var(--pos); width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; background: var(--white); display: grid; place-items: center; box-shadow: 0 6px 18px rgba(15,34,54,.3); pointer-events: none; color: var(--deep); font-weight: 800; }
+.compare .tag { position: absolute; top: 16px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.85); font-size: 13px; font-weight: 700; color: var(--ink); }
+.compare .tag.l { left: 16px; } .compare .tag.r { right: 16px; }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; }
+.compare-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* service area */
+.area { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.group { background: var(--glass); border-radius: 22px; padding: 28px; }
+.group h3 { display: flex; align-items: center; gap: 10px; font-size: 20px; margin-bottom: 16px; }
+.group h3 svg { color: var(--deep); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { padding: 9px 16px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-weight: 600; font-size: 15px; color: var(--ink); }
+.js .chip { opacity: 0; transform: scale(.6); transition: opacity .3s, transform .5s cubic-bezier(.3,1.7,.5,1); transition-delay: calc(.15s + var(--c) * 90ms); }
+.js .in .chip { opacity: 1; transform: none; }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
+.about-copy { font-size: 20px; margin-top: 20px; color: var(--ink); max-width: 30em; }
+.points { list-style: none; display: grid; gap: 16px; }
+.points li { display: grid; grid-template-columns: 48px 1fr; gap: 4px 16px; background: var(--white); border-radius: 18px; padding: 20px; border: 1px solid var(--line); }
+.points .ico { width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, #ffb547 25%, #fff); color: var(--ink); display: grid; place-items: center; grid-row: span 2; }
+.points h3 { font-size: 18px; }
+.points p { color: var(--muted); font-size: 15px; }
+.review figure { max-width: 42em; margin-top: 48px; }
+.review blockquote { font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.25; color: var(--ink); letter-spacing: -0.03em; }
+.review figcaption { margin-top: 12px; color: var(--muted); }
+
+/* contact */
+.contact { background: var(--deep); color: var(--white); position: relative; overflow: hidden; isolation: isolate; }
+.contact::before { content: ""; position: absolute; inset: -20% -10%; z-index: -1; background: radial-gradient(600px 300px at 85% 10%, rgba(159,211,247,.25), transparent 70%), radial-gradient(500px 300px at 10% 100%, rgba(255,255,255,.08), transparent 70%); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: start; }
+.contact h2 { color: var(--white); }
+.contact-lede { color: rgba(255,255,255,.85); font-size: 18px; margin-top: 16px; max-width: 28em; }
+.big-phone { display: inline-block; margin-top: 28px; font-size: clamp(34px, 4.2vw, 50px); font-weight: 800; letter-spacing: -0.04em; color: var(--bite); text-decoration: none; }
+.mail { display: block; margin-top: 10px; color: rgba(255,255,255,.9); }
+form.quote { background: var(--white); color: var(--ink); border-radius: 24px; padding: 32px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
+.field { display: grid; gap: 6px; margin-bottom: 16px; }
+.field label { font-size: 14px; font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--glass); border: 2px solid transparent; border-radius: 14px; padding: 12px 14px; transition: border-color .2s, background-color .2s; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--deep); background: var(--white); }
+.field textarea { min-height: 100px; resize: vertical; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+form.quote .btn { width: 100%; }
+.form-note { margin-top: 12px; font-size: 14px; color: var(--muted); min-height: 22px; text-align: center; }
+.form-note.ok { color: var(--deep); animation: rise .4s ease-out; }
+
+footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14px; padding: 26px 0 34px; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.foot a { text-decoration: none; }
+
+.call-fab { display: none; }
+
+@media (max-width: 920px) {
+  .nav nav { display: none; }
+  .nav .btn .label { display: none; }
+  .nav .btn { width: 46px; padding: 0; }
+  .pane { margin: 0 10px; border-radius: 22px; min-height: 0; box-shadow: 0 0 0 6px var(--white), 0 0 0 7px var(--line), 0 30px 60px -30px rgba(15,34,54,.45); }
+  .hero-body { grid-template-columns: 1fr; gap: 36px; padding: 40px 22px 120px; }
+  .services, .groups, .about-grid, .contact-grid, .compare-wrap { grid-template-columns: 1fr; gap: 28px; }
+  .about-grid, .contact-grid { gap: 44px; }
+  .section { padding: 72px 0; }
+  .pair { grid-template-columns: 1fr; }
+  form.quote { padding: 24px 20px; }
+  .call-fab { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; }
+  footer { padding-bottom: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fog, .squeegee, .drip { display: none; }
+  .js .reveal, .js .hero h1 .w, .js .hero-sub, .js .hero-actions, .js .card, .js .chip { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Preview built for Piranha Window Cleaning. This site isn't live yet.</div>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><path d="M2 11 C 6 3, 16 1, 22 6 L 28 2 L 26 11 L 28 20 L 22 16 C 16 21, 6 19, 2 11Z" fill="currentColor"/><path d="M8 12 L10 14.5 L12 12 L14 14.5 L16 12 L18 14.5" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><circle cx="8" cy="8.5" r="1.6" fill="#fff"/></svg>Piranha Window Cleaning</a>
+    <nav aria-label="Sections"><a href="#services">Services</a><a href="#area">Service area</a><a href="#about">About</a><a href="#contact">Get a quote</a></nav>
+    <a class="btn btn-deep btn-sm" href="tel:2089193617" aria-label="Call us at (208) 919-3617"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="label">(208) 919-3617</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="pane hero">
+    <svg class="scene" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd3f7"/><stop offset=".65" stop-color="#e3f3fd"/><stop offset="1" stop-color="#f6fbff"/></linearGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#skyh)"/>
+  <circle cx="1130" cy="170" r="70" fill="#fff6d6"/><circle cx="1130" cy="170" r="110" fill="#fff6d6" opacity=".35"/>
+  <path d="M0 520 L180 360 L300 450 L470 290 L620 430 L760 330 L930 470 L1080 340 L1250 450 L1440 360 V720 H0Z" fill="#a9c4dc"/>
+  <path d="M470 290 L520 335 L500 340 L470 322 L445 342 L430 330Z M1080 340 L1120 372 L1100 376 L1080 362 L1060 378 L1045 368Z" fill="#fff" opacity=".85"/>
+  <path d="M0 600 L220 470 L380 560 L560 440 L740 560 L900 470 L1100 580 L1280 480 L1440 560 V720 H0Z" fill="#6f93b8"/>
+  <path d="M0 680 Q 360 610 720 660 T 1440 640 V720 H0Z" fill="#46698f"/>
+</svg>
+    <div class="fog"></div>
+    <div class="squeegee" aria-hidden="true"><div class="handle"></div><div class="blade"></div></div>
+    <span class="drip" style="left:8%;--k:0"></span><span class="drip" style="left:19%;--k:1"></span><span class="drip" style="left:33%;--k:2"></span><span class="drip" style="left:47%;--k:3"></span><span class="drip" style="left:61%;--k:4"></span><span class="drip" style="left:74%;--k:5"></span><span class="drip" style="left:88%;--k:6"></span>
+    <div class="glint"></div>
+    <div class="hero-body">
+      <div>
+        <h1><span class="w" style="--i:0">Clean</span> <span class="w" style="--i:1">to</span> <span class="w" style="--i:2">the</span> <span class="w" style="--i:3">bone.</span></h1>
+        <p class="hero-sub">Window washing, gutter cleaning and pressure washing from a locally owned and operated Idaho company, from the Treasure Valley to the mountains.</p>
+        <div class="hero-actions">
+          <a class="btn btn-bite" href="#contact">Request a quote</a>
+          <a class="btn btn-clear" href="tel:2089193617"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+        </div>
+      </div>
+      <aside class="card" aria-label="Contact">
+        <small>Call us for a quote</small>
+        <a class="phone" href="tel:2089193617">(208) 919-3617</a>
+        <div class="stats">
+          <div><b data-count="Local">Local</b><span>Locally owned and operated</span></div>
+          <div><b data-count="3">3</b><span>Services in one call</span></div>
+          <div><b data-count="7">7</b><span>Idaho towns served</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>Services</h2><p>Windows, gutters and the outside of your home, from one locally owned company.</p></div>
+      <div class="services">
+        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div><h3>Window Washing</h3><p>Your windows washed so you can see clearly again.</p></div>
+        <div class="svc reveal" style="--d:1"><div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3>Gutter Cleaning</h3><p>Gutters cleared out so water drains the way it should.</p></div>
+        <div class="svc reveal" style="--d:2"><div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div><h3>Pressure Washing</h3><p>Pressure washing for the outside surfaces of your home.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-label="Before and after">
+    <div class="wrap compare-wrap">
+      <div class="reveal">
+        <h2>See the difference</h2>
+        <p class="section-head" style="margin:14px 0 0;color:var(--muted);font-size:18px">Drag the slider across the glass.</p>
+      </div>
+      <div class="reveal" style="--d:2">
+        <div class="compare" id="compare">
+          <svg class="scene" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd3f7"/><stop offset=".65" stop-color="#e3f3fd"/><stop offset="1" stop-color="#f6fbff"/></linearGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#skyc)"/>
+  <circle cx="1130" cy="170" r="70" fill="#fff6d6"/><circle cx="1130" cy="170" r="110" fill="#fff6d6" opacity=".35"/>
+  <path d="M0 520 L180 360 L300 450 L470 290 L620 430 L760 330 L930 470 L1080 340 L1250 450 L1440 360 V720 H0Z" fill="#a9c4dc"/>
+  <path d="M470 290 L520 335 L500 340 L470 322 L445 342 L430 330Z M1080 340 L1120 372 L1100 376 L1080 362 L1060 378 L1045 368Z" fill="#fff" opacity=".85"/>
+  <path d="M0 600 L220 470 L380 560 L560 440 L740 560 L900 470 L1100 580 L1280 480 L1440 560 V720 H0Z" fill="#6f93b8"/>
+  <path d="M0 680 Q 360 610 720 660 T 1440 640 V720 H0Z" fill="#46698f"/>
+</svg>
+          <div class="dirty"></div>
+          <span class="tag l">Before</span><span class="tag r">After</span>
+          <div class="divider"></div>
+          <div class="knob" aria-hidden="true">&#8596;</div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+        </div>
+        <p class="compare-note">Illustration, not a photo of a real job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section area" id="area">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>From the valley to the mountains</h2><p>Serving the Treasure Valley and Idaho&#39;s mountain towns.</p></div>
+      <div class="groups">
+        <div class="group reveal" style="--d:0"><h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>Treasure Valley</h3><div class="chips"><span class="chip" style="--c:0">Boise</span><span class="chip" style="--c:1">Meridian</span><span class="chip" style="--c:2">Nampa</span><span class="chip" style="--c:3">Caldwell</span></div></div>
+        <div class="group reveal" style="--d:2"><h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Mountain towns</h3><div class="chips"><span class="chip" style="--c:0">McCall</span><span class="chip" style="--c:1">Sun Valley</span><span class="chip" style="--c:2">Stanley</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <h2>About Piranha Window Cleaning</h2>
+        <p class="about-copy">Piranha Advanced Window Cleaning is locally owned and operated, with one simple promise in its name: clean to the bone. We wash windows, clear gutters and pressure wash homes across the Treasure Valley and up into McCall, Sun Valley and Stanley.</p>
+      </div>
+      <ul class="points">
+        <li class="reveal" style="--d:1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><h3>Locally owned and operated</h3><p>An Idaho company, not a national franchise call center.</p></li>
+        <li class="reveal" style="--d:2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span><h3>Valley to the mountains</h3><p>Boise, Meridian, Nampa and Caldwell, plus McCall, Sun Valley and Stanley.</p></li>
+        <li class="reveal" style="--d:3"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3>One call, three services</h3><p>Windows, gutters and pressure washing handled together.</p></li>
+      </ul>
+    </div>
+    
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h2>Ready for clear windows?</h2>
+        <p class="contact-lede">Tell us what needs cleaning and we'll get back to you with a quote. Rather talk? Give us a call.</p>
+        <a class="big-phone" href="tel:2089193617">(208) 919-3617</a>
+        <a class="mail" href="mailto:piranhawindows@gmail.com">piranhawindows@gmail.com</a>
+      </div>
+      <form class="quote reveal" id="quote-form" style="--d:2">
+        <div class="pair">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" required name="name" autocomplete="name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" required name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-town">Town</label><select id="f-town" name="town"><option value="">Select your town</option><option>Boise</option><option>Meridian</option><option>Nampa</option><option>Caldwell</option><option>McCall</option><option>Sun Valley</option><option>Stanley</option></select></div>
+        <div class="field"><label for="f-svc">Service</label><select id="f-svc" name="service"><option value="">Select a service</option><option>Window Washing</option><option>Gutter Cleaning</option><option>Pressure Washing</option><option>More than one</option></select></div>
+        <div class="field"><label for="f-det">Details</label><textarea id="f-det" name="details" placeholder="Home size, number of windows, anything else"></textarea></div>
+        <button class="btn btn-bite" type="submit">Request a quote</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Piranha Advanced Window Cleaning, Boise, ID</span>
+    <a href="tel:2089193617">(208) 919-3617</a>
+  </div>
+</footer>
+<a class="btn btn-bite call-fab" href="tel:2089193617"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // drop the blur layers once the wipe is done so they cost nothing afterwards
+  document.querySelector(".fog")?.addEventListener("animationend", e => { e.target.remove(); document.querySelector(".squeegee")?.remove(); });
+
+  // count up numeric stats once the hero card appears
+  const countUp = el => {
+    const m = el.dataset.count.match(/^(\d+(?:\.\d+)?)(.*)$/);
+    if (!m || reduce) return;
+    const end = parseFloat(m[1]), dec = (m[1].split(".")[1] || "").length, suffix = m[2], t0 = performance.now();
+    const tick = now => {
+      const p = Math.min((now - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = (end * e).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = (0).toFixed(dec) + suffix;
+    requestAnimationFrame(tick);
+  };
+  setTimeout(() => document.querySelectorAll("[data-count]").forEach(countUp), 2500);
+
+  // before/after slider; glides from "mostly dirty" to the middle the first time it's seen
+  const cmp = document.getElementById("compare");
+  const range = cmp.querySelector("input");
+  const setPos = v => cmp.style.setProperty("--pos", v + "%");
+  range.addEventListener("input", () => setPos(range.value));
+  const glide = () => {
+    if (reduce) return;
+    const t0 = performance.now();
+    const step = now => {
+      const p = Math.min((now - t0) / 1600, 1), e = 1 - Math.pow(1 - p, 3), v = 92 - 42 * e;
+      setPos(v); range.value = v;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const targets = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduce) { targets.forEach(t => t.classList.add("in")); return; }
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("in"); io.unobserve(e.target);
+    if (e.target.contains(cmp)) glide();
+  }), { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => io.observe(t));
+})();
+
+document.getElementById("quote-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const note = document.getElementById("form-note");
+  note.classList.add("ok");
+  note.textContent = "Preview only. On the live site, requests go straight to your phone and inbox.";
+});
+</script>
+</body>
+</html>
