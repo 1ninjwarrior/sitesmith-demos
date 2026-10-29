@@ -58,31 +58,32 @@ h3 { font-weight: 700; letter-spacing: -0.02em; }
 .pane { position: relative; margin: 0 16px; border-radius: 28px; overflow: hidden; isolation: isolate; min-height: 620px;
   box-shadow: 0 0 0 10px var(--white), 0 0 0 11px var(--line), 0 40px 80px -40px rgba(15,34,54,.45); }
 .scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-.fog { position: absolute; inset: 0; z-index: 1; backdrop-filter: blur(14px) saturate(.7); -webkit-backdrop-filter: blur(14px) saturate(.7);
+/* frosted with color, not backdrop-filter: a moving blur is the most expensive thing a phone can animate */
+.fog { position: absolute; inset: 0; z-index: 1; will-change: transform;
   background:
     radial-gradient(180px 120px at 18% 30%, rgba(120,100,70,.18), transparent 70%),
     radial-gradient(240px 160px at 70% 60%, rgba(120,100,70,.16), transparent 70%),
     radial-gradient(140px 100px at 45% 80%, rgba(120,100,70,.14), transparent 70%),
     radial-gradient(200px 140px at 88% 22%, rgba(120,100,70,.12), transparent 70%),
-    rgba(236,242,246,.55); }
-.squeegee { position: absolute; z-index: 2; top: 6%; height: 88%; left: -40px; width: 34px; opacity: 0; pointer-events: none; }
+    rgba(226,234,240,.86); }
+.squeegee { position: absolute; z-index: 2; top: 6%; height: 88%; left: -40px; width: 100%; opacity: 0; pointer-events: none; will-change: transform, opacity; }
 .squeegee .blade { position: absolute; left: 10px; top: 0; bottom: 0; width: 14px; border-radius: 7px; background: linear-gradient(90deg, #1c2733, #3d4e60); box-shadow: 6px 0 14px rgba(15,34,54,.25); }
 .squeegee .handle { position: absolute; left: -46px; top: 50%; width: 60px; height: 14px; margin-top: -7px; border-radius: 7px; background: var(--bite); }
 .squeegee .handle::before { content: ""; position: absolute; left: -36px; top: 2px; width: 40px; height: 10px; border-radius: 5px; background: #c9d4de; }
 .js .fog { animation: wipe 2s cubic-bezier(.6,.05,.3,1) .5s forwards; }
 .js .squeegee { animation: sweep 2s cubic-bezier(.6,.05,.3,1) .5s forwards; }
 html:not(.js) .fog, html:not(.js) .squeegee { display: none; }
-@keyframes wipe { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 0 100%); } }
-@keyframes sweep { 0% { left: -40px; opacity: 1; } 94% { opacity: 1; } 100% { left: calc(100% + 10px); opacity: 0; } }
+@keyframes wipe { from { transform: none; } to { transform: translateX(100%); } }
+@keyframes sweep { 0% { transform: none; opacity: 1; } 94% { opacity: 1; } 100% { transform: translateX(calc(100% + 50px)); opacity: 0; } }
 
 .glint { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
 .glint::before { content: ""; position: absolute; top: -20%; bottom: -20%; width: 18%; left: -30%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform: skewX(-18deg); }
-.js .glint::before { animation: glint 7s ease-in-out 3s infinite; }
-@keyframes glint { 0% { left: -30%; } 25%, 100% { left: 130%; } }
+.js .glint::before { will-change: transform; animation: glint 7s ease-in-out 3s infinite; }
+@keyframes glint { 0% { transform: skewX(-18deg) translateX(0); } 25%, 100% { transform: skewX(-18deg) translateX(900%); } }
 
 .drip { position: absolute; z-index: 3; top: -20px; width: 7px; height: 14px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(circle at 35% 35%, #fff, rgba(255,255,255,.4) 60%, rgba(160,200,230,.35)); box-shadow: 0 1px 2px rgba(15,34,54,.15); opacity: 0; pointer-events: none; }
-.js .drip { animation: drip 6.5s cubic-bezier(.5,0,.8,.6) infinite; animation-delay: calc(2.6s + var(--k) * .9s); }
-@keyframes drip { 0% { top: -20px; opacity: 0; } 8% { opacity: .95; } 30% { top: 22%; } 60% { opacity: .9; } 100% { top: 105%; opacity: 0; } }
+.js .drip { will-change: transform, opacity; animation: drip 6.5s cubic-bezier(.5,0,.8,.6) infinite; animation-delay: calc(2.6s + var(--k) * .9s); }
+@keyframes drip { 0% { transform: none; opacity: 0; } 8% { opacity: .95; } 30% { transform: translateY(160px); } 60% { opacity: .9; } 100% { transform: translateY(720px); opacity: 0; } }
 
 .hero-body { position: relative; z-index: 4; display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; padding: 72px 56px 150px; }
 .hero h1 { font-size: clamp(46px, 6.4vw, 86px); max-width: 10ch; }
@@ -94,7 +95,7 @@ html:not(.js) .fog, html:not(.js) .squeegee { display: none; }
 .js .hero-sub { animation-delay: 2s; } .js .hero-actions { animation-delay: 2.15s; } .js .card { animation-delay: 2.35s; }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
-.card { background: rgba(255,255,255,.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.9); border-radius: 22px; padding: 26px; box-shadow: 0 24px 50px -24px rgba(15,34,54,.4); }
+.card { background: rgba(255,255,255,.95); border: 1px solid rgba(255,255,255,.9); border-radius: 22px; padding: 26px; box-shadow: 0 24px 50px -24px rgba(15,34,54,.4); }
 .card small { color: var(--muted); font-size: 14px; }
 .card .phone { display: block; font-size: 32px; font-weight: 800; letter-spacing: -0.04em; text-decoration: none; color: var(--ink); margin: 2px 0 16px; }
 .card .phone:hover { color: var(--deep); }
@@ -193,6 +194,7 @@ footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14p
   .pair { grid-template-columns: 1fr; }
   form.quote { padding: 24px 20px; }
   .call-fab { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; }
+  .call-fab { transition: opacity .25s, transform .25s; } .call-fab.away { opacity: 0; transform: translateY(24px); pointer-events: none; }
   footer { padding-bottom: 100px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -201,6 +203,42 @@ footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14p
   .fog, .squeegee, .drip { display: none; }
   .js .reveal, .js .hero h1 .w, .js .hero-sub, .js .hero-actions, .js .card, .js .chip { opacity: 1; transform: none; }
 }
+</style>
+<style>
+.vx-hero-photo { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+.vx-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, color-mix(in srgb, #0f4c81 94%, #000) 0%, color-mix(in srgb, #0f4c81 84%, transparent) 55%, color-mix(in srgb, #0f4c81 62%, transparent) 100%); }
+.vx-band { padding: 28px 0 8px; }
+.vx-wide { padding-top: 0; }
+.vx-band .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: grid; gap: 14px; }
+.vx-band figure { margin: 0; overflow: hidden; border-radius: 18px; background: color-mix(in srgb, #0f4c81 12%, #fff); }
+.vx-band img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.vx-band figure:hover img { transform: scale(1.04); }
+.vx-mosaic .vx-wrap { grid-template-columns: 1.6fr 1fr; grid-template-rows: 220px 220px; }
+.vx-mosaic figure:first-child { grid-row: span 2; }
+.vx-wide .vx-wrap { max-width: none; padding: 0; }
+.vx-wide figure { border-radius: 0; height: clamp(240px, 34vw, 440px); }
+.vx-duo .vx-wrap { grid-template-columns: 1fr 1fr; }
+.vx-duo figure { height: 340px; }
+.vx-duo figure:nth-child(2) { transform: translateY(36px); }
+.vx-duo { padding-bottom: 44px; }
+.vx-jobs { padding: 72px 0; }
+.vx-jobs .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.vx-jobs h2 { margin-bottom: 8px; }
+.vx-jobs p.vx-note { color: inherit; opacity: .75; margin-bottom: 26px; max-width: 60ch; }
+.vx-frames { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.vx-frame { aspect-ratio: 4 / 3; border: 2px dashed color-mix(in srgb, #0f4c81 35%, transparent); border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 8px; color: color-mix(in srgb, #0f4c81 70%, #555); background: color-mix(in srgb, #ffb547 7%, transparent); font-size: 15px; font-weight: 600; text-align: center; padding: 12px; }
+.vx-real figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 16px; }
+.vx-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vx-credit { max-width: 1160px; margin: 0 auto; padding: 8px 24px 18px; font-size: 12px; opacity: .7; }
+.vx-credit a { color: inherit; }
+@media (max-width: 760px) {
+  .vx-mosaic .vx-wrap { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 140px; }
+  .vx-mosaic figure:first-child { grid-row: auto; grid-column: span 2; }
+  .vx-duo figure { height: 220px; }
+  .vx-duo figure:nth-child(2) { transform: translateY(20px); }
+  .vx-frames { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .vx-band img { transition: none; } }
 </style>
 </head>
 <body>
@@ -251,7 +289,7 @@ footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14p
     </div>
   </section>
 
-  <section class="section" id="services">
+  <section class="vx-band vx-duo" aria-hidden="true"><div class="vx-wrap"><figure><img src="img/scene-2434467.jpg" alt="" loading="lazy"></figure><figure><img src="img/scene-1867187.jpg" alt="" loading="lazy"></figure></div></section><section class="section" id="services">
     <div class="wrap">
       <div class="section-head reveal"><h2>Services</h2><p>Windows, gutters and the outside of your home, from one locally owned company.</p></div>
       <div class="services">
@@ -317,7 +355,11 @@ footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14p
     
   </section>
 
-  <section class="section contact" id="contact">
+  <section class="vx-jobs" aria-label="Recent jobs"><div class="vx-wrap">
+  <h2>Recent jobs</h2>
+  <p class="vx-note">Preview: this is where Piranha Window Cleaning's own job photos go. Send a few before-and-afters and they drop right in.</p>
+  <div class="vx-frames"><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div></div>
+</div></section><section class="section contact" id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
         <h2>Ready for clear windows?</h2>
@@ -345,8 +387,9 @@ footer { background: var(--deep-2); color: rgba(255,255,255,.65); font-size: 14p
     <span>&copy; 2026 Piranha Advanced Window Cleaning, Boise, ID</span>
     <a href="tel:2089193617">(208) 919-3617</a>
   </div>
-</footer>
+<p class="vx-credit">Stock photos: <a href="https://pixabay.com/photos/house-architecture-front-yard-1836070/">Pexels</a>, <a href="https://pixabay.com/photos/gutter-guard-ipswich-2434467/">123switch</a>, <a href="https://pixabay.com/photos/house-garage-driveway-architecture-1867187/">Pexels</a> on Pixabay.</p></footer>
 <a class="btn btn-bite call-fab" href="tel:2089193617"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+<script>(() => { const f = document.querySelector(".call-fab"); if (!f) return; const s = () => f.classList.toggle("away", scrollY < innerHeight * .6); s(); addEventListener("scroll", s, { passive: true }); })()</script>
 
 <script>
 (() => {

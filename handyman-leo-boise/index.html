@@ -57,7 +57,7 @@ h3 { font-weight: 700; letter-spacing: -0.01em; }
   background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
   mask-image: radial-gradient(1100px 600px at 70% 30%, #000 30%, transparent 85%); }
 .js .hero::before { animation: grid-in 1.4s ease-out both; }
-@keyframes grid-in { from { opacity: 0; background-position: 0 -40px, -40px 0, 0 -40px, -40px 0; } to { opacity: 1; } }
+@keyframes grid-in { from { opacity: 0; } to { opacity: 1; } }
 
 .nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 26px; text-decoration: none; white-space: nowrap; letter-spacing: .01em; }
@@ -97,8 +97,9 @@ h3 { font-weight: 700; letter-spacing: -0.01em; }
 .hook { position: absolute; left: -10px; top: -6px; width: 10px; height: 68px; background: #9aa3ad; border-radius: 2px; box-shadow: inset -2px 0 0 rgba(0,0,0,.2); }
 .case { position: absolute; right: 0; top: -22px; width: 108px; height: 100px; border-radius: 24px; background: var(--navy-deep); box-shadow: 0 14px 30px -10px rgba(0,0,0,.6), inset 0 0 0 4px color-mix(in srgb, var(--tape) 85%, #000); display: grid; place-items: center; }
 .case::after { content: ""; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #c9d1da, #7d8794); box-shadow: inset 0 0 0 4px rgba(0,0,0,.15); }
-.js .blade { left: calc(100% - 92px); animation: pull 1.8s cubic-bezier(.65,0,.25,1) .4s forwards; }
-@keyframes pull { to { left: 0; } }
+/* slides out from the case with transform only (animating left relaid out the 2560px ruler every frame) */
+.js .blade { transform: translateX(100%); will-change: transform; animation: pull 1.8s cubic-bezier(.65,0,.25,1) .4s forwards; }
+@keyframes pull { to { transform: none; } }
 
 /* scroll reveal */
 .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--d, 0) * 90ms); }
@@ -205,6 +206,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
   .pair { grid-template-columns: 1fr; }
   form.quote { padding: 24px 20px; }
   .call-fab { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; }
+  .call-fab { transition: opacity .25s, transform .25s; } .call-fab.away { opacity: 0; transform: translateY(24px); pointer-events: none; }
   footer { padding-bottom: 100px; }
 }
 @media (min-width: 921px) and (max-width: 1080px) { .services { grid-template-columns: repeat(2, 1fr); } }
@@ -215,14 +217,51 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
   .js .reveal, .js .hero h1 .w, .js .hero-sub, .js .hero-actions, .js .card, .js .badge { opacity: 1; transform: none; }
 }
 </style>
+<style>
+.vx-hero-photo { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+.vx-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, color-mix(in srgb, #22344d 94%, #000) 0%, color-mix(in srgb, #22344d 84%, transparent) 55%, color-mix(in srgb, #22344d 62%, transparent) 100%); }
+.vx-band { padding: 28px 0 8px; }
+.vx-wide { padding-top: 0; }
+.vx-band .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: grid; gap: 14px; }
+.vx-band figure { margin: 0; overflow: hidden; border-radius: 18px; background: color-mix(in srgb, #22344d 12%, #fff); }
+.vx-band img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.vx-band figure:hover img { transform: scale(1.04); }
+.vx-mosaic .vx-wrap { grid-template-columns: 1.6fr 1fr; grid-template-rows: 220px 220px; }
+.vx-mosaic figure:first-child { grid-row: span 2; }
+.vx-wide .vx-wrap { max-width: none; padding: 0; }
+.vx-wide figure { border-radius: 0; height: clamp(240px, 34vw, 440px); }
+.vx-duo .vx-wrap { grid-template-columns: 1fr 1fr; }
+.vx-duo figure { height: 340px; }
+.vx-duo figure:nth-child(2) { transform: translateY(36px); }
+.vx-duo { padding-bottom: 44px; }
+.vx-jobs { padding: 72px 0; }
+.vx-jobs .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.vx-jobs h2 { margin-bottom: 8px; }
+.vx-jobs p.vx-note { color: inherit; opacity: .75; margin-bottom: 26px; max-width: 60ch; }
+.vx-frames { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.vx-frame { aspect-ratio: 4 / 3; border: 2px dashed color-mix(in srgb, #22344d 35%, transparent); border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 8px; color: color-mix(in srgb, #22344d 70%, #555); background: color-mix(in srgb, #f2a541 7%, transparent); font-size: 15px; font-weight: 600; text-align: center; padding: 12px; }
+.vx-real figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 16px; }
+.vx-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vx-credit { max-width: 1160px; margin: 0 auto; padding: 8px 24px 18px; font-size: 12px; opacity: .7; }
+.vx-credit a { color: inherit; }
+@media (max-width: 760px) {
+  .vx-mosaic .vx-wrap { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 140px; }
+  .vx-mosaic figure:first-child { grid-row: auto; grid-column: span 2; }
+  .vx-duo figure { height: 220px; }
+  .vx-duo figure:nth-child(2) { transform: translateY(20px); }
+  .vx-frames { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .vx-band img { transition: none; } }
+</style>
+<style>.hero { position: relative; isolation: isolate; }</style>
 </head>
 <body>
 <div class="demo-bar">Preview built for Handyman Leo. This site isn't live yet.</div>
-<header class="hero" id="top">
+<header class="hero" id="top"><div class="vx-hero-photo" style="background-image:url('img/hero-3298446.jpg')" aria-hidden="true"></div>
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Handyman Leo</a>
-      <nav aria-label="Sections"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Free quote</a></nav>
+      <nav aria-label="Sections"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Get a quote</a></nav>
       <a class="btn btn-tape btn-sm" href="tel:2083623624" aria-label="Call Leo at (208) 362-3624"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="label">(208) 362-3624</span></a>
     </div>
     <div class="hero-body">
@@ -235,7 +274,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
         </div>
       </div>
       <aside class="card" aria-label="Contact">
-        <small>Call Leo for a free quote</small>
+        <small>Call Leo for a quote</small>
         <a class="phone" href="tel:2083623624">(208) 362-3624</a>
         <div class="stats">
           <div><b data-count="3×">3×</b><span>Nextdoor Neighborhood Favorite</span></div>
@@ -256,7 +295,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
     <div class="wrap">
       <div class="section-head reveal"><h2>Services</h2><p>The jobs on your list that never seem to get done.</p></div>
       <div class="services">
-        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></div><h3>Fixture Installation</h3><p>New fixtures installed around your home.</p></div>
+        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></div><h3>Fixture Installation</h3><p>New fixtures installed around your home.</p></div>
         <div class="svc reveal" style="--d:1"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3>Drywall Repair</h3><p>Holes, dings and cracks in drywall patched.</p></div>
         <div class="svc reveal" style="--d:2"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Furniture Assembly</h3><p>Furniture put together so you don&#39;t have to.</p></div>
         <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Small Repairs</h3><p>The small fixes that pile up around the house.</p></div>
@@ -280,7 +319,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="vx-band vx-wide" aria-hidden="true"><div class="vx-wrap"><figure><img src="img/scene-2616955.jpg" alt="" loading="lazy"></figure></div></section><section class="section" id="about">
     <div class="wrap about-grid">
       <div class="reveal">
         <h2>About Handyman Leo</h2>
@@ -297,15 +336,19 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
 
   <section class="review" aria-label="Reviews">
     <div class="wrap">
-      <figure class="reveal"><blockquote>I would highly recommend him to anyone that needs a handyman</blockquote><figcaption>S. H., on Nextdoor</figcaption></figure>
+      <figure class="reveal"><blockquote>I would highly recommend him to anyone that needs a handyman</blockquote><figcaption>S. H., via Nextdoor</figcaption></figure>
     </div>
   </section>
 
-  <section class="section contact" id="contact">
+  <section class="vx-jobs" aria-label="Recent jobs"><div class="vx-wrap">
+  <h2>Recent jobs</h2>
+  <p class="vx-note">Preview: this is where Leo's own job photos go. Send a few before-and-afters and they drop right in.</p>
+  <div class="vx-frames"><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div></div>
+</div></section><section class="section contact" id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
         <h2>What&#39;s on your list?</h2>
-        <p class="contact-lede">Send Leo the details and you'll get a free quote back. Rather talk it through? Call.</p>
+        <p class="contact-lede">Send Leo the details and you'll get a quote back. Rather talk it through? Call.</p>
         <a class="big-phone" href="tel:2083623624">(208) 362-3624</a>
         <a class="mail" href="mailto:handymanleo66@gmail.com">handymanleo66@gmail.com</a>
         <p class="area">Serving homeowners across Boise.</p>
@@ -329,8 +372,9 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 1
     <span>&copy; 2026 Handyman Leo LLC, Boise, ID</span>
     <a href="tel:2083623624">(208) 362-3624</a>
   </div>
-</footer>
+<p class="vx-credit">Stock photos: <a href="https://pixabay.com/photos/steel-old-iron-tool-wood-rusty-3298446/">adamr</a>, <a href="https://pixabay.com/photos/lights-light-bulb-light-bulbs-decor-2616955/">StockSnap</a> on Pixabay.</p></footer>
 <a class="btn btn-tape call-fab" href="tel:2083623624"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call Leo</a>
+<script>(() => { const f = document.querySelector(".call-fab"); if (!f) return; const s = () => f.classList.toggle("away", scrollY < innerHeight * .6); s(); addEventListener("scroll", s, { passive: true }); })()</script>
 
 <script>
 (() => {

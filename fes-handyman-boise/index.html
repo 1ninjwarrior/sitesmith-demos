@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FES Handyman | Handyman in Boise, ID</title>
+<meta name="description" content="FES Handyman is a Boise handyman for painting, carpentry, plumbing, tile, flooring and more. Nextdoor Neighborhood Favorite in 2024 and 2025. Free estimates. Call (208) 605-9243.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root {
+  --navy: #1F3A5F;
+  --navy-deep: color-mix(in srgb, #1F3A5F 72%, #000);
+  --navy-soft: color-mix(in srgb, #1F3A5F 8%, #fff);
+  --tape: #E8892B;
+  --tape-deep: color-mix(in srgb, #E8892B 75%, #7a4a10);
+  --bg: #f3f5f8;
+  --white: #ffffff;
+  --ink: #141c27;
+  --body: #3a4656;
+  --muted: #6a7686;
+  --line: #dde3ea;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Barlow, system-ui, sans-serif; font-size: 18px; line-height: 1.6; color: var(--body); background: var(--bg); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--tape); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { color: var(--ink); line-height: 1; }
+h1, h2 { font-family: "Barlow Condensed", Barlow, sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+h2 { font-size: clamp(40px, 5vw, 60px); }
+h3 { font-weight: 700; letter-spacing: -0.01em; }
+
+.demo-bar { background: var(--navy-deep); color: rgba(255,255,255,.75); font-size: 13px; text-align: center; padding: 8px 24px; border-bottom: 1px solid rgba(255,255,255,.08); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 12px; font: inherit; font-size: 17px; font-weight: 700; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; transition: transform .2s cubic-bezier(.3,1.6,.6,1), box-shadow .2s, background-color .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn-tape { background: var(--tape); color: var(--ink); box-shadow: 0 4px 0 var(--tape-deep); }
+.btn-tape:hover { box-shadow: 0 6px 0 var(--tape-deep); }
+.btn-tape:active { box-shadow: 0 2px 0 var(--tape-deep); }
+.btn-ghost { background: rgba(255,255,255,.08); color: var(--white); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.35); }
+.btn-ghost:hover { background: rgba(255,255,255,.16); }
+.btn-sm { height: 42px; padding: 0 18px; font-size: 15px; }
+
+/* hero */
+.hero { position: relative; background: var(--navy); color: var(--white); overflow: hidden; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 128px 128px, 128px 128px, 32px 32px, 32px 32px;
+  mask-image: radial-gradient(1100px 600px at 70% 30%, #000 30%, transparent 85%); }
+.js .hero::before { animation: grid-in 1.4s ease-out both; }
+@keyframes grid-in { from { opacity: 0; } to { opacity: 1; } }
+
+.nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 76px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 26px; text-decoration: none; white-space: nowrap; letter-spacing: .01em; }
+.brand svg { color: var(--tape); transition: transform .5s cubic-bezier(.3,1.6,.6,1); }
+.brand:hover svg { transform: rotate(-35deg); }
+.nav nav { display: flex; gap: 30px; font-size: 16px; font-weight: 500; }
+.nav nav a { text-decoration: none; color: rgba(255,255,255,.8); position: relative; }
+.nav nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px; background: var(--tape); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.nav nav a:hover { color: var(--white); }
+.nav nav a:hover::after { transform: scaleX(1); }
+
+.hero-body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; padding: 64px 0 140px; }
+.hero h1 { color: var(--white); font-size: clamp(60px, 8vw, 112px); line-height: .92; max-width: 9ch; text-transform: none; }
+.hero h1 .w { display: inline-block; }
+.js .hero h1 .w { opacity: 0; transform: translateY(30px) rotate(3deg); animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(.25s + var(--i) * .09s); }
+.hero-sub { font-size: 20px; color: rgba(255,255,255,.84); max-width: 30em; margin-top: 24px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.js .hero-sub, .js .hero-actions, .js .card { opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; }
+.js .hero-sub { animation-delay: .8s; } .js .hero-actions { animation-delay: .95s; } .js .card { animation-delay: 1.15s; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+.card { background: var(--white); color: var(--ink); border-radius: 20px; padding: 28px; box-shadow: 0 30px 60px -24px rgba(0,0,0,.5); }
+.card small { color: var(--muted); font-size: 15px; }
+.card .phone { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 44px; font-weight: 800; line-height: 1.05; text-decoration: none; margin: 2px 0 18px; }
+.card .phone:hover { color: var(--navy); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; border-top: 1px dashed var(--line); padding-top: 18px; }
+.stats b { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 34px; font-weight: 800; color: var(--navy); line-height: 1.05; }
+.stats span { display: block; font-size: 13px; color: var(--muted); line-height: 1.3; }
+
+/* tape measure */
+.tape { position: absolute; left: 0; right: 0; bottom: 34px; height: 56px; pointer-events: none; }
+.blade { position: absolute; left: 0; right: 92px; top: 0; height: 56px; background: var(--tape); box-shadow: 0 8px 20px -8px rgba(0,0,0,.6), inset 0 -3px 0 rgba(0,0,0,.12), inset 0 2px 0 rgba(255,255,255,.35); }
+.blade svg { display: block; height: 56px; width: 2560px; }
+.blade .ticks { position: absolute; inset: 0; overflow: hidden; }
+.blade rect { fill: #1c1c1c; }
+.blade text { font: 700 14px Barlow, sans-serif; fill: #1c1c1c; }
+.hook { position: absolute; left: -10px; top: -6px; width: 10px; height: 68px; background: #9aa3ad; border-radius: 2px; box-shadow: inset -2px 0 0 rgba(0,0,0,.2); }
+.case { position: absolute; right: 0; top: -22px; width: 108px; height: 100px; border-radius: 24px; background: var(--navy-deep); box-shadow: 0 14px 30px -10px rgba(0,0,0,.6), inset 0 0 0 4px color-mix(in srgb, var(--tape) 85%, #000); display: grid; place-items: center; }
+.case::after { content: ""; width: 38px; height: 38px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #c9d1da, #7d8794); box-shadow: inset 0 0 0 4px rgba(0,0,0,.15); }
+/* slides out from the case with transform only (animating left relaid out the 2560px ruler every frame) */
+.js .blade { transform: translateX(100%); will-change: transform; animation: pull 1.8s cubic-bezier(.65,0,.25,1) .4s forwards; }
+@keyframes pull { to { transform: none; } }
+
+/* scroll reveal */
+.js .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--d, 0) * 90ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+.section { padding: 104px 0; }
+.section-head { max-width: 38em; margin-bottom: 52px; }
+.section-head p { color: var(--muted); font-size: 19px; margin-top: 14px; }
+
+/* services */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.svc { position: relative; background: var(--white); border-radius: 18px; padding: 30px 28px; border: 1px solid var(--line); transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, border-color .3s; }
+.svc:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(20,28,39,.4); border-color: color-mix(in srgb, var(--tape) 60%, var(--line)); }
+.svc .ico { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--navy-soft); color: var(--navy); margin-bottom: 20px; transition: transform .55s cubic-bezier(.3,1.5,.5,1), background-color .3s, color .3s; }
+.svc:hover .ico { transform: rotate(90deg); background: var(--tape); color: var(--ink); }
+.svc h3 { font-size: 22px; margin-bottom: 8px; }
+.svc p { color: var(--muted); font-size: 16px; }
+
+/* awards */
+.awards { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.awards-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center; }
+.awards-grid p { color: var(--muted); font-size: 19px; margin-top: 14px; max-width: 26em; }
+.badges { display: flex; gap: 22px; justify-content: flex-end; flex-wrap: wrap; }
+.badge { width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; text-align: center; background: var(--navy); color: var(--white); position: relative; box-shadow: 0 18px 30px -16px rgba(20,28,39,.6); }
+.badge::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; border: 2px dashed color-mix(in srgb, var(--tape) 70%, transparent); }
+.badge svg { color: var(--tape); margin: 0 auto 2px; }
+.badge b { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 800; line-height: 1; }
+.badge span { display: block; font-size: 12px; color: rgba(255,255,255,.75); line-height: 1.2; padding: 0 22px; margin-top: 4px; }
+.js .badge { opacity: 0; transform: scale(.4) rotate(-25deg); transition: opacity .4s, transform .7s cubic-bezier(.3,1.7,.5,1); transition-delay: calc(.15s + var(--d) * .22s); }
+.js .badges.in .badge { opacity: 1; transform: none; }
+.badge:hover::before { animation: spin 6s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* bubble level */
+.level-wrap { display: flex; justify-content: center; padding: 56px 0 0; }
+.level { --tilt: 0deg; width: min(520px, 90%); height: 46px; border-radius: 12px; background: var(--tape); box-shadow: inset 0 -4px 0 var(--tape-deep), 0 14px 24px -14px rgba(20,28,39,.5); display: grid; place-items: center; transform: rotate(var(--tilt)); transition: transform .9s cubic-bezier(.3,1.6,.5,1); }
+.vial { position: relative; width: 140px; height: 24px; border-radius: 12px; background: linear-gradient(#e6f6c9, #c8e89a); box-shadow: inset 0 0 0 2px rgba(0,0,0,.25); overflow: hidden; }
+.vial::before, .vial::after { content: ""; position: absolute; top: 3px; bottom: 3px; width: 2px; background: rgba(0,0,0,.45); }
+.vial::before { left: calc(50% - 22px); } .vial::after { left: calc(50% + 20px); }
+.bubble { position: absolute; top: 4px; left: calc(50% - 16px); width: 32px; height: 16px; border-radius: 10px; background: radial-gradient(circle at 40% 35%, #fff, rgba(255,255,255,.55) 60%, rgba(255,255,255,.3)); transform: translateX(var(--shift, 0px)); transition: transform .9s cubic-bezier(.3,1.6,.5,1); }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
+.about-copy { font-size: 21px; margin-top: 22px; color: var(--ink); max-width: 30em; }
+.points { list-style: none; display: grid; gap: 16px; }
+.points li { display: grid; grid-template-columns: 48px 1fr; gap: 4px 16px; background: var(--white); border-radius: 16px; padding: 20px; border: 1px solid var(--line); }
+.points .ico { width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, var(--tape) 22%, #fff); color: var(--ink); display: grid; place-items: center; grid-row: span 2; }
+.points h3 { font-size: 19px; }
+.points p { color: var(--muted); font-size: 16px; }
+
+/* review */
+.review { padding: 0 0 104px; }
+.review figure { max-width: 46em; margin: 0 auto; text-align: center; }
+.review blockquote { font-family: "Barlow Condensed", sans-serif; font-size: clamp(36px, 4.6vw, 56px); font-weight: 700; line-height: 1.05; color: var(--navy); }
+.review blockquote::before { content: "\201C"; display: block; font-size: 1.6em; line-height: .7; color: var(--tape); }
+.review figcaption { margin-top: 18px; color: var(--muted); }
+.review figure + figure { margin-top: 48px; }
+
+/* contact */
+.contact { position: relative; background: var(--navy-deep); color: var(--white); overflow: hidden; isolation: isolate; }
+.contact::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .7;
+  background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 32px 32px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: start; }
+.contact h2 { color: var(--white); }
+.contact-lede { color: rgba(255,255,255,.85); font-size: 19px; margin-top: 16px; max-width: 28em; }
+.big-phone { display: inline-block; margin-top: 28px; font-family: "Barlow Condensed", sans-serif; font-size: clamp(48px, 5.4vw, 68px); font-weight: 800; line-height: 1; color: var(--tape); text-decoration: none; }
+.mail { display: block; margin-top: 12px; color: rgba(255,255,255,.9); }
+.area { margin-top: 26px; color: rgba(255,255,255,.75); }
+form.quote { background: var(--white); color: var(--ink); border-radius: 22px; padding: 32px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.field { display: grid; gap: 6px; margin-bottom: 16px; }
+.field label { font-size: 15px; font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 17px; color: var(--ink); background: var(--bg); border: 2px solid transparent; border-radius: 12px; padding: 12px 14px; transition: border-color .2s, background-color .2s; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--navy); background: var(--white); }
+.field textarea { min-height: 104px; resize: vertical; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+form.quote .btn { width: 100%; }
+.form-note { margin-top: 12px; font-size: 15px; color: var(--muted); min-height: 22px; text-align: center; }
+.form-note.ok { color: var(--navy); animation: rise .4s ease-out; }
+
+footer { background: var(--navy-deep); color: rgba(255,255,255,.6); font-size: 15px; padding: 26px 0 34px; border-top: 1px solid rgba(255,255,255,.1); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.foot a { text-decoration: none; }
+
+.call-fab { display: none; }
+
+@media (max-width: 920px) {
+  .nav nav { display: none; }
+  .nav .btn .label { display: none; }
+  .nav .btn { width: 46px; padding: 0; }
+  .hero-body, .about-grid, .contact-grid, .awards-grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero-body { padding: 32px 0 132px; }
+  .tape { bottom: 30px; height: 44px; }
+  .blade { height: 44px; right: 70px; }
+  .js .blade { left: calc(100% - 70px); }
+  .hook { height: 56px; } .blade svg { height: 44px; width: 2011px; }
+  .case { width: 84px; height: 80px; top: -18px; border-radius: 20px; }
+  .case::after { width: 30px; height: 30px; }
+  .services { grid-template-columns: 1fr; }
+  .badges { justify-content: center; gap: 14px; }
+  .badge { width: 104px; height: 104px; }
+  .badge b { font-size: 28px; } .badge span { display: none; } .badge svg { width: 18px; height: 18px; }
+  .section { padding: 72px 0; }
+  .review { padding-bottom: 72px; }
+  .pair { grid-template-columns: 1fr; }
+  form.quote { padding: 24px 20px; }
+  .call-fab { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; }
+  .call-fab { transition: opacity .25s, transform .25s; } .call-fab.away { opacity: 0; transform: translateY(24px); pointer-events: none; }
+  footer { padding-bottom: 100px; }
+}
+@media (min-width: 921px) and (max-width: 1080px) { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .blade { left: 0; }
+  .js .reveal, .js .hero h1 .w, .js .hero-sub, .js .hero-actions, .js .card, .js .badge { opacity: 1; transform: none; }
+}
+</style>
+<style>
+.vx-hero-photo { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+.vx-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, color-mix(in srgb, #1F3A5F 94%, #000) 0%, color-mix(in srgb, #1F3A5F 84%, transparent) 55%, color-mix(in srgb, #1F3A5F 62%, transparent) 100%); }
+.vx-band { padding: 28px 0 8px; }
+.vx-wide { padding-top: 0; }
+.vx-band .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: grid; gap: 14px; }
+.vx-band figure { margin: 0; overflow: hidden; border-radius: 18px; background: color-mix(in srgb, #1F3A5F 12%, #fff); }
+.vx-band img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.vx-band figure:hover img { transform: scale(1.04); }
+.vx-mosaic .vx-wrap { grid-template-columns: 1.6fr 1fr; grid-template-rows: 220px 220px; }
+.vx-mosaic figure:first-child { grid-row: span 2; }
+.vx-wide .vx-wrap { max-width: none; padding: 0; }
+.vx-wide figure { border-radius: 0; height: clamp(240px, 34vw, 440px); }
+.vx-duo .vx-wrap { grid-template-columns: 1fr 1fr; }
+.vx-duo figure { height: 340px; }
+.vx-duo figure:nth-child(2) { transform: translateY(36px); }
+.vx-duo { padding-bottom: 44px; }
+.vx-jobs { padding: 72px 0; }
+.vx-jobs .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.vx-jobs h2 { margin-bottom: 8px; }
+.vx-jobs p.vx-note { color: inherit; opacity: .75; margin-bottom: 26px; max-width: 60ch; }
+.vx-frames { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.vx-frame { aspect-ratio: 4 / 3; border: 2px dashed color-mix(in srgb, #1F3A5F 35%, transparent); border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 8px; color: color-mix(in srgb, #1F3A5F 70%, #555); background: color-mix(in srgb, #E8892B 7%, transparent); font-size: 15px; font-weight: 600; text-align: center; padding: 12px; }
+.vx-real figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 16px; }
+.vx-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vx-credit { max-width: 1160px; margin: 0 auto; padding: 8px 24px 18px; font-size: 12px; opacity: .7; }
+.vx-credit a { color: inherit; }
+@media (max-width: 760px) {
+  .vx-mosaic .vx-wrap { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 140px; }
+  .vx-mosaic figure:first-child { grid-row: auto; grid-column: span 2; }
+  .vx-duo figure { height: 220px; }
+  .vx-duo figure:nth-child(2) { transform: translateY(20px); }
+  .vx-frames { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .vx-band img { transition: none; } }
+</style>
+</head>
+<body>
+<div class="demo-bar">Preview built for FES Handyman. This site isn't live yet.</div>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>FES Handyman</a>
+      <nav aria-label="Sections"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Get a quote</a></nav>
+      <a class="btn btn-tape btn-sm" href="tel:2086059243" aria-label="Call us at (208) 605-9243"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="label">(208) 605-9243</span></a>
+    </div>
+    <div class="hero-body">
+      <div>
+        <h1><span class="w" style="--i:0">Boise&#39;s</span> <span class="w" style="--i:1">go-to</span> <span class="w" style="--i:2">handyman</span> <span class="w" style="--i:3">for</span> <span class="w" style="--i:4">the</span> <span class="w" style="--i:5">whole</span> <span class="w" style="--i:6">list</span></h1>
+        <p class="hero-sub">Painting, carpentry, plumbing, tile, flooring, yard work and repairs, all from one call. Free estimates, and we&#39;re open seven days a week.</p>
+        <div class="hero-actions">
+          <a class="btn btn-tape" href="#contact">Get a free estimate</a>
+          <a class="btn btn-ghost" href="tel:2086059243"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+        </div>
+      </div>
+      <aside class="card" aria-label="Contact">
+        <small>Call us for a quote</small>
+        <a class="phone" href="tel:2086059243">(208) 605-9243</a>
+        <div class="stats">
+          <div><b data-count="2024 &amp; &#39;25">2024 &amp; &#39;25</b><span>Nextdoor Neighborhood Favorite</span></div>
+          <div><b data-count="Free">Free</b><span>Estimates and quotes</span></div>
+          <div><b data-count="7 days">7 days</b><span>Open weekdays and weekends</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="tape" aria-hidden="true">
+    <div class="blade"><div class="ticks"><svg viewBox="0 0 2560 56" preserveAspectRatio="xMinYMin meet"><rect x="0" y="0" width="2" height="22"/><rect x="12" y="0" width="1.2" height="6"/><rect x="24" y="0" width="1.2" height="10"/><rect x="36" y="0" width="1.2" height="6"/><rect x="48" y="0" width="1.2" height="15"/><rect x="60" y="0" width="1.2" height="6"/><rect x="72" y="0" width="1.2" height="10"/><rect x="84" y="0" width="1.2" height="6"/><rect x="96" y="0" width="2" height="22"/><text x="100" y="38">1</text><rect x="108" y="0" width="1.2" height="6"/><rect x="120" y="0" width="1.2" height="10"/><rect x="132" y="0" width="1.2" height="6"/><rect x="144" y="0" width="1.2" height="15"/><rect x="156" y="0" width="1.2" height="6"/><rect x="168" y="0" width="1.2" height="10"/><rect x="180" y="0" width="1.2" height="6"/><rect x="192" y="0" width="2" height="22"/><text x="196" y="38">2</text><rect x="204" y="0" width="1.2" height="6"/><rect x="216" y="0" width="1.2" height="10"/><rect x="228" y="0" width="1.2" height="6"/><rect x="240" y="0" width="1.2" height="15"/><rect x="252" y="0" width="1.2" height="6"/><rect x="264" y="0" width="1.2" height="10"/><rect x="276" y="0" width="1.2" height="6"/><rect x="288" y="0" width="2" height="22"/><text x="292" y="38">3</text><rect x="300" y="0" width="1.2" height="6"/><rect x="312" y="0" width="1.2" height="10"/><rect x="324" y="0" width="1.2" height="6"/><rect x="336" y="0" width="1.2" height="15"/><rect x="348" y="0" width="1.2" height="6"/><rect x="360" y="0" width="1.2" height="10"/><rect x="372" y="0" width="1.2" height="6"/><rect x="384" y="0" width="2" height="22"/><text x="388" y="38">4</text><rect x="396" y="0" width="1.2" height="6"/><rect x="408" y="0" width="1.2" height="10"/><rect x="420" y="0" width="1.2" height="6"/><rect x="432" y="0" width="1.2" height="15"/><rect x="444" y="0" width="1.2" height="6"/><rect x="456" y="0" width="1.2" height="10"/><rect x="468" y="0" width="1.2" height="6"/><rect x="480" y="0" width="2" height="22"/><text x="484" y="38">5</text><rect x="492" y="0" width="1.2" height="6"/><rect x="504" y="0" width="1.2" height="10"/><rect x="516" y="0" width="1.2" height="6"/><rect x="528" y="0" width="1.2" height="15"/><rect x="540" y="0" width="1.2" height="6"/><rect x="552" y="0" width="1.2" height="10"/><rect x="564" y="0" width="1.2" height="6"/><rect x="576" y="0" width="2" height="22"/><text x="580" y="38">6</text><rect x="588" y="0" width="1.2" height="6"/><rect x="600" y="0" width="1.2" height="10"/><rect x="612" y="0" width="1.2" height="6"/><rect x="624" y="0" width="1.2" height="15"/><rect x="636" y="0" width="1.2" height="6"/><rect x="648" y="0" width="1.2" height="10"/><rect x="660" y="0" width="1.2" height="6"/><rect x="672" y="0" width="2" height="22"/><text x="676" y="38">7</text><rect x="684" y="0" width="1.2" height="6"/><rect x="696" y="0" width="1.2" height="10"/><rect x="708" y="0" width="1.2" height="6"/><rect x="720" y="0" width="1.2" height="15"/><rect x="732" y="0" width="1.2" height="6"/><rect x="744" y="0" width="1.2" height="10"/><rect x="756" y="0" width="1.2" height="6"/><rect x="768" y="0" width="2" height="22"/><text x="772" y="38">8</text><rect x="780" y="0" width="1.2" height="6"/><rect x="792" y="0" width="1.2" height="10"/><rect x="804" y="0" width="1.2" height="6"/><rect x="816" y="0" width="1.2" height="15"/><rect x="828" y="0" width="1.2" height="6"/><rect x="840" y="0" width="1.2" height="10"/><rect x="852" y="0" width="1.2" height="6"/><rect x="864" y="0" width="2" height="22"/><text x="868" y="38">9</text><rect x="876" y="0" width="1.2" height="6"/><rect x="888" y="0" width="1.2" height="10"/><rect x="900" y="0" width="1.2" height="6"/><rect x="912" y="0" width="1.2" height="15"/><rect x="924" y="0" width="1.2" height="6"/><rect x="936" y="0" width="1.2" height="10"/><rect x="948" y="0" width="1.2" height="6"/><rect x="960" y="0" width="2" height="22"/><text x="964" y="38">10</text><rect x="972" y="0" width="1.2" height="6"/><rect x="984" y="0" width="1.2" height="10"/><rect x="996" y="0" width="1.2" height="6"/><rect x="1008" y="0" width="1.2" height="15"/><rect x="1020" y="0" width="1.2" height="6"/><rect x="1032" y="0" width="1.2" height="10"/><rect x="1044" y="0" width="1.2" height="6"/><rect x="1056" y="0" width="2" height="22"/><text x="1060" y="38">11</text><rect x="1068" y="0" width="1.2" height="6"/><rect x="1080" y="0" width="1.2" height="10"/><rect x="1092" y="0" width="1.2" height="6"/><rect x="1104" y="0" width="1.2" height="15"/><rect x="1116" y="0" width="1.2" height="6"/><rect x="1128" y="0" width="1.2" height="10"/><rect x="1140" y="0" width="1.2" height="6"/><rect x="1152" y="0" width="2" height="22"/><text x="1156" y="38">12</text><rect x="1164" y="0" width="1.2" height="6"/><rect x="1176" y="0" width="1.2" height="10"/><rect x="1188" y="0" width="1.2" height="6"/><rect x="1200" y="0" width="1.2" height="15"/><rect x="1212" y="0" width="1.2" height="6"/><rect x="1224" y="0" width="1.2" height="10"/><rect x="1236" y="0" width="1.2" height="6"/><rect x="1248" y="0" width="2" height="22"/><text x="1252" y="38">13</text><rect x="1260" y="0" width="1.2" height="6"/><rect x="1272" y="0" width="1.2" height="10"/><rect x="1284" y="0" width="1.2" height="6"/><rect x="1296" y="0" width="1.2" height="15"/><rect x="1308" y="0" width="1.2" height="6"/><rect x="1320" y="0" width="1.2" height="10"/><rect x="1332" y="0" width="1.2" height="6"/><rect x="1344" y="0" width="2" height="22"/><text x="1348" y="38">14</text><rect x="1356" y="0" width="1.2" height="6"/><rect x="1368" y="0" width="1.2" height="10"/><rect x="1380" y="0" width="1.2" height="6"/><rect x="1392" y="0" width="1.2" height="15"/><rect x="1404" y="0" width="1.2" height="6"/><rect x="1416" y="0" width="1.2" height="10"/><rect x="1428" y="0" width="1.2" height="6"/><rect x="1440" y="0" width="2" height="22"/><text x="1444" y="38">15</text><rect x="1452" y="0" width="1.2" height="6"/><rect x="1464" y="0" width="1.2" height="10"/><rect x="1476" y="0" width="1.2" height="6"/><rect x="1488" y="0" width="1.2" height="15"/><rect x="1500" y="0" width="1.2" height="6"/><rect x="1512" y="0" width="1.2" height="10"/><rect x="1524" y="0" width="1.2" height="6"/><rect x="1536" y="0" width="2" height="22"/><text x="1540" y="38">16</text><rect x="1548" y="0" width="1.2" height="6"/><rect x="1560" y="0" width="1.2" height="10"/><rect x="1572" y="0" width="1.2" height="6"/><rect x="1584" y="0" width="1.2" height="15"/><rect x="1596" y="0" width="1.2" height="6"/><rect x="1608" y="0" width="1.2" height="10"/><rect x="1620" y="0" width="1.2" height="6"/><rect x="1632" y="0" width="2" height="22"/><text x="1636" y="38">17</text><rect x="1644" y="0" width="1.2" height="6"/><rect x="1656" y="0" width="1.2" height="10"/><rect x="1668" y="0" width="1.2" height="6"/><rect x="1680" y="0" width="1.2" height="15"/><rect x="1692" y="0" width="1.2" height="6"/><rect x="1704" y="0" width="1.2" height="10"/><rect x="1716" y="0" width="1.2" height="6"/><rect x="1728" y="0" width="2" height="22"/><text x="1732" y="38">18</text><rect x="1740" y="0" width="1.2" height="6"/><rect x="1752" y="0" width="1.2" height="10"/><rect x="1764" y="0" width="1.2" height="6"/><rect x="1776" y="0" width="1.2" height="15"/><rect x="1788" y="0" width="1.2" height="6"/><rect x="1800" y="0" width="1.2" height="10"/><rect x="1812" y="0" width="1.2" height="6"/><rect x="1824" y="0" width="2" height="22"/><text x="1828" y="38">19</text><rect x="1836" y="0" width="1.2" height="6"/><rect x="1848" y="0" width="1.2" height="10"/><rect x="1860" y="0" width="1.2" height="6"/><rect x="1872" y="0" width="1.2" height="15"/><rect x="1884" y="0" width="1.2" height="6"/><rect x="1896" y="0" width="1.2" height="10"/><rect x="1908" y="0" width="1.2" height="6"/><rect x="1920" y="0" width="2" height="22"/><text x="1924" y="38">20</text><rect x="1932" y="0" width="1.2" height="6"/><rect x="1944" y="0" width="1.2" height="10"/><rect x="1956" y="0" width="1.2" height="6"/><rect x="1968" y="0" width="1.2" height="15"/><rect x="1980" y="0" width="1.2" height="6"/><rect x="1992" y="0" width="1.2" height="10"/><rect x="2004" y="0" width="1.2" height="6"/><rect x="2016" y="0" width="2" height="22"/><text x="2020" y="38">21</text><rect x="2028" y="0" width="1.2" height="6"/><rect x="2040" y="0" width="1.2" height="10"/><rect x="2052" y="0" width="1.2" height="6"/><rect x="2064" y="0" width="1.2" height="15"/><rect x="2076" y="0" width="1.2" height="6"/><rect x="2088" y="0" width="1.2" height="10"/><rect x="2100" y="0" width="1.2" height="6"/><rect x="2112" y="0" width="2" height="22"/><text x="2116" y="38">22</text><rect x="2124" y="0" width="1.2" height="6"/><rect x="2136" y="0" width="1.2" height="10"/><rect x="2148" y="0" width="1.2" height="6"/><rect x="2160" y="0" width="1.2" height="15"/><rect x="2172" y="0" width="1.2" height="6"/><rect x="2184" y="0" width="1.2" height="10"/><rect x="2196" y="0" width="1.2" height="6"/><rect x="2208" y="0" width="2" height="22"/><text x="2212" y="38">23</text><rect x="2220" y="0" width="1.2" height="6"/><rect x="2232" y="0" width="1.2" height="10"/><rect x="2244" y="0" width="1.2" height="6"/><rect x="2256" y="0" width="1.2" height="15"/><rect x="2268" y="0" width="1.2" height="6"/><rect x="2280" y="0" width="1.2" height="10"/><rect x="2292" y="0" width="1.2" height="6"/><rect x="2304" y="0" width="2" height="22"/><text x="2308" y="38">24</text><rect x="2316" y="0" width="1.2" height="6"/><rect x="2328" y="0" width="1.2" height="10"/><rect x="2340" y="0" width="1.2" height="6"/><rect x="2352" y="0" width="1.2" height="15"/><rect x="2364" y="0" width="1.2" height="6"/><rect x="2376" y="0" width="1.2" height="10"/><rect x="2388" y="0" width="1.2" height="6"/><rect x="2400" y="0" width="2" height="22"/><text x="2404" y="38">25</text><rect x="2412" y="0" width="1.2" height="6"/><rect x="2424" y="0" width="1.2" height="10"/><rect x="2436" y="0" width="1.2" height="6"/><rect x="2448" y="0" width="1.2" height="15"/><rect x="2460" y="0" width="1.2" height="6"/><rect x="2472" y="0" width="1.2" height="10"/><rect x="2484" y="0" width="1.2" height="6"/><rect x="2496" y="0" width="2" height="22"/><text x="2500" y="38">26</text><rect x="2508" y="0" width="1.2" height="6"/><rect x="2520" y="0" width="1.2" height="10"/><rect x="2532" y="0" width="1.2" height="6"/><rect x="2544" y="0" width="1.2" height="15"/><rect x="2556" y="0" width="1.2" height="6"/></svg></div><div class="hook"></div></div>
+    <div class="case"></div>
+  </div>
+</header>
+
+<main>
+  <section class="vx-band vx-wide" aria-hidden="true"><div class="vx-wrap"><figure><img src="img/scene-1336160.jpg" alt="" loading="lazy"></figure></div></section><section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head reveal"><h2>Services</h2><p>Small repairs, bigger projects, and the odd jobs nobody else wants to take on. If it&#39;s on your list, there&#39;s a good chance we can handle it.</p></div>
+      <div class="services">
+        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>General Handyman &amp; Carpentry</h3><p>Repairs, installs and woodwork around the house, from loose trim to new shelving.</p></div>
+        <div class="svc reveal" style="--d:1"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></div><h3>Painting</h3><p>Interior and exterior painting with clean lines and a tidy workspace.</p></div>
+        <div class="svc reveal" style="--d:2"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div><h3>Plumbing</h3><p>Help with everyday plumbing problems like drips, leaks and fixture swaps.</p></div>
+        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3>Tile &amp; Flooring</h3><p>New tile and flooring put in, or worn spots repaired, so your floors look right again.</p></div>
+        <div class="svc reveal" style="--d:1"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Furniture Work &amp; Organizing</h3><p>Furniture assembly and repair, and help getting garages, closets and rooms organized.</p></div>
+        <div class="svc reveal" style="--d:2"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><h3>Lawn Service &amp; Weed Barrier</h3><p>Lawn care and weed barrier installation to keep your yard neat and easier to look after.</p></div>
+        <div class="svc reveal" style="--d:0"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Tool &amp; Electronics Repair</h3><p>Bring us the tool or device that quit on you, and we&#39;ll see about getting it running again.</p></div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <h2>About FES Handyman</h2>
+        <p class="about-copy">FES Handyman is a Boise handyman business that takes on pretty much everything handyman-wise. That covers fixing a leaky faucet, laying new tile, painting a room, and putting down weed barrier in the yard. Neighbors on Nextdoor named us a Neighborhood Favorite in 2024 and again in 2025. We want good work to be easy to afford, so we give free estimates, offer payment plans, and take money off for veterans, seniors, people with disabilities and returning customers. We also do pro bono work for people who qualify.</p>
+      </div>
+      <ul class="points">
+        <li class="reveal" style="--d:1"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2 2 0 0 0 1.5 1.1l5.2.8a.5.5 0 0 1 .3.9l-3.8 3.6a2 2 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.6l-4.6-2.5a2 2 0 0 0-1.9 0l-4.6 2.5a.5.5 0 0 1-.8-.6l.9-5.2a2 2 0 0 0-.6-1.8L1.7 9.8a.5.5 0 0 1 .3-.9l5.2-.8a2 2 0 0 0 1.5-1.1z"/></svg></span><h3>A Neighborhood Favorite</h3><p>Boise neighbors on Nextdoor named FES Handyman a Neighborhood Favorite in both 2024 and 2025.</p></li>
+        <li class="reveal" style="--d:2"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Fair and flexible on cost</h3><p>Estimates are free, payment plans are available, and veterans, seniors, people with disabilities and returning customers get a discount.</p></li>
+        <li class="reveal" style="--d:3"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><h3>Open on weekends too</h3><p>We&#39;re available Monday to Friday 9am–5pm and Saturday and Sunday 11am–3pm, so you don&#39;t have to take time off work.</p></li>
+      </ul>
+    </div>
+    <div class="level-wrap" aria-hidden="true"><div class="level" id="level"><div class="vial"><div class="bubble"></div></div></div></div>
+  </section>
+
+  
+
+  <section class="vx-jobs" aria-label="Recent jobs"><div class="vx-wrap">
+  <h2>Recent jobs</h2>
+  <p class="vx-note">Preview: this is where FES Handyman's own job photos go. Send a few before-and-afters and they drop right in.</p>
+  <div class="vx-frames"><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div></div>
+</div></section><section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h2>Got a to-do list? Let&#39;s talk.</h2>
+        <p class="contact-lede">Send us the details and you'll get a quote back. Rather talk it through? Call.</p>
+        <a class="big-phone" href="tel:2086059243">(208) 605-9243</a>
+        <a class="mail" href="mailto:Fes2009@outlook.com">Fes2009@outlook.com</a>
+        <p class="area">We&#39;re based in Boise and work with homeowners all around the city. Call to check whether we can get to your project.</p>
+      </div>
+      <form class="quote reveal" id="quote-form" style="--d:2">
+        <div class="pair">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" required name="name" autocomplete="name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" required name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-svc">Type of job</label><select id="f-svc" name="service"><option value="">Select a job</option><option>General Handyman &amp; Carpentry</option><option>Painting</option><option>Plumbing</option><option>Tile &amp; Flooring</option><option>Furniture Work &amp; Organizing</option><option>Lawn Service &amp; Weed Barrier</option><option>Tool &amp; Electronics Repair</option><option>Something else</option></select></div>
+        <div class="field"><label for="f-det">What needs doing?</label><textarea id="f-det" name="details" placeholder="A few words is plenty"></textarea></div>
+        <button class="btn btn-tape" type="submit">Get a free estimate</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 FES HANDYMAN LLC, Boise, ID</span>
+    <a href="tel:2086059243">(208) 605-9243</a>
+  </div>
+<p class="vx-credit">Stock photos: <a href="https://pixabay.com/photos/kitchen-dining-room-dining-table-1336160/">midascode</a> on Pixabay.</p></footer>
+<a class="btn btn-tape call-fab" href="tel:2086059243"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+<script>(() => { const f = document.querySelector(".call-fab"); if (!f) return; const s = () => f.classList.toggle("away", scrollY < innerHeight * .6); s(); addEventListener("scroll", s, { passive: true }); })()</script>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // count up numeric stats ("3×") once the hero card has appeared
+  const countUp = el => {
+    const m = el.dataset.count.match(/^(\d+(?:\.\d+)?)(.*)$/);
+    if (!m || reduce) return;
+    const end = parseFloat(m[1]), dec = (m[1].split(".")[1] || "").length, suffix = m[2], t0 = performance.now();
+    const tick = now => {
+      const p = Math.min((now - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = (end * e).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = (0).toFixed(dec) + suffix;
+    requestAnimationFrame(tick);
+  };
+  setTimeout(() => document.querySelectorAll("[data-count]").forEach(countUp), 1300);
+
+  // bubble level: tilts with scroll speed, springs back to level when scrolling stops
+  const level = document.getElementById("level");
+  if (level && !reduce) {
+    let lastY = scrollY, settle;
+    addEventListener("scroll", () => {
+      const v = scrollY - lastY; lastY = scrollY;
+      const tilt = Math.max(-5, Math.min(5, v * 0.18));
+      level.style.setProperty("--tilt", tilt + "deg");
+      level.querySelector(".bubble").style.setProperty("--shift", (-tilt * 9) + "px");
+      clearTimeout(settle);
+      settle = setTimeout(() => { level.style.setProperty("--tilt", "0deg"); level.querySelector(".bubble").style.setProperty("--shift", "0px"); }, 120);
+    }, { passive: true });
+  }
+
+  // scroll reveals
+  const targets = document.querySelectorAll(".reveal, .badges");
+  if (!("IntersectionObserver" in window) || reduce) { targets.forEach(t => t.classList.add("in")); return; }
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => io.observe(t));
+})();
+
+document.getElementById("quote-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const note = document.getElementById("form-note");
+  note.classList.add("ok");
+  note.textContent = "Preview only. On the live site, this goes straight to FES Handyman's phone and inbox.";
+});
+</script>
+</body>
+</html>
