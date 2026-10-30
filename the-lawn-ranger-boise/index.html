@@ -168,6 +168,9 @@ form.quote .btn { width: 100%; }
 .form-note.ok { color: var(--green); animation: rise .4s ease-out; }
 
 .section figure { max-width: 40em; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px 56px; align-items: start; }
+.section figcaption { display: block; margin-bottom: 4px; }
+.area.towns { margin-top: 10px; font-weight: 700; }
 .section blockquote { font-size: clamp(26px, 3vw, 36px); line-height: 1.25; font-weight: 650; color: var(--ink); letter-spacing: -0.02em; }
 .section figcaption { margin-top: 14px; color: var(--muted); }
 footer { background: var(--green-deep); color: rgba(255,255,255,.65); font-size: 15px; padding: 26px 0 34px; border-top: 1px solid rgba(255,255,255,.12); }
@@ -177,6 +180,8 @@ footer { background: var(--green-deep); color: rgba(255,255,255,.65); font-size:
 .call-fab { display: none; }
 
 @media (max-width: 920px) {
+  .stats b { font-size: 22px; }
+  .stats span { font-size: 12px; }
   .nav nav { display: none; }
   .nav .btn .label { display: none; }
   .nav .btn { width: 46px; padding: 0; }
@@ -346,6 +351,7 @@ footer { background: var(--green-deep); color: rgba(255,255,255,.65); font-size:
         <p class="contact-lede">Tell us about your yard and we'll get back to you with a quote. Rather talk? Give us a call.</p>
         <a class="big-phone" href="tel:2082848397">(208) 284-8397</a>
         <p class="area">Proudly serving homeowners across Boise.</p>
+        <p class="area towns">Boise</p>
       </div>
       <form class="quote reveal" id="quote-form" style="--d:2">
         <div class="pair">

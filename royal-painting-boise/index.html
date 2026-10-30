@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Painting | Painting in Boise, ID</title>
+<meta name="description" content="Royal Painting LLC does interior and exterior house painting in Boise and the Treasure Valley, plus cabinets, doors, baseboards, pressure washing and minor repairs. Call (208) 713-1069.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root {
+  --brand: #1F3A6B;
+  --brand-2: color-mix(in srgb, #1F3A6B 70%, #000);
+  --accent: #D4A537;
+  --fresh: color-mix(in srgb, #D4A537 10%, #fbf8f3);
+  --primer: #dcd6cc;
+  --handle: color-mix(in srgb, #D4A537 70%, #222);
+  --paper: #fbf8f3;
+  --ink: #1d1f24;
+  --body: #474b53;
+  --muted: #767a82;
+  --line: #e6e0d6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Manrope, system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: var(--body); background: var(--paper); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { color: var(--ink); line-height: 1.08; }
+h1, h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-size: clamp(34px, 4.4vw, 52px); }
+h3 { font-weight: 800; font-size: 19px; letter-spacing: -0.01em; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; }
+.eyebrow::before { content: ""; width: 22px; height: 8px; border-radius: 4px; background: var(--accent); }
+
+.demo-bar { background: var(--brand-2); color: rgba(255,255,255,.82); font-size: 13px; text-align: center; padding: 8px 24px; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 14px; font: inherit; font-size: 16px; font-weight: 800; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; transition: transform .2s cubic-bezier(.3,1.6,.6,1), box-shadow .2s, background .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-brand { background: var(--brand); color: #fff; box-shadow: 0 10px 24px -12px var(--brand); }
+.btn-brand:hover { background: var(--brand-2); }
+.btn-line { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn-sm { height: 46px; padding: 0 18px; font-size: 15px; }
+
+/* hero: primer wall, then three fresh coats */
+.hero { position: relative; overflow: hidden; isolation: isolate; background: var(--primer); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(260px 180px at 12% 30%, rgba(160,140,115,.28), transparent 70%),
+    radial-gradient(360px 220px at 78% 70%, rgba(150,135,110,.26), transparent 70%),
+    radial-gradient(200px 140px at 52% 18%, rgba(255,255,255,.35), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.025) 0 2px, transparent 2px 7px); }
+.coat { position: absolute; left: -2%; width: 112%; z-index: 1; pointer-events: none; transform-origin: 0 50%;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.35) 0 1px, transparent 1px 6px), var(--fresh);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.4); border-radius: 0 60px 60px 0; }
+.c1 { top: 0; height: 36%; --d: .3s; }
+.c2 { top: 33%; height: 36%; --d: .85s; }
+.c3 { top: 66%; height: 36%; --d: 1.4s; }
+.roller { position: absolute; left: 0; z-index: 2; width: 70px; pointer-events: none; opacity: 0; }
+.roller svg { width: 100%; height: 100%; display: block; }
+.js .coat { transform: scaleX(0); will-change: transform; animation: coat 1s cubic-bezier(.55,.06,.3,1) var(--d) forwards; }
+.js .roller { will-change: transform; animation: roll 1s cubic-bezier(.55,.06,.3,1) var(--d) forwards; }
+html:not(.js) .roller { display: none; }
+@keyframes coat { to { transform: scaleX(1); } }
+@keyframes roll { 0% { opacity: 1; transform: translateX(-80px); } 92% { opacity: 1; } 100% { opacity: 0; transform: translateX(calc(100vw + 20px)); } }
+
+.nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 80px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; white-space: nowrap; letter-spacing: -0.01em; }
+.brand .mark { width: 40px; height: 40px; border-radius: 12px; background: var(--brand); color: #fff; display: grid; place-items: center; transition: transform .4s cubic-bezier(.3,1.6,.6,1); }
+.brand:hover .mark { transform: rotate(-12deg); }
+.nav nav { display: flex; gap: 28px; font-size: 15px; font-weight: 700; }
+.nav nav a { text-decoration: none; color: var(--body); }
+.nav nav a:hover { color: var(--brand); }
+
+.hero-body { position: relative; z-index: 3; display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: center; padding: 48px 0 96px; }
+.hero h1 { font-size: clamp(44px, 5.6vw, 76px); max-width: 14ch; }
+.hero h1 .w { display: inline-block; }
+.hero-sub { font-size: 19px; max-width: 31em; margin-top: 22px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.js .hero h1 .w { opacity: 0; transform: translateY(24px); animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(1.9s + var(--i) * .07s); }
+.js .hero-sub, .js .hero-actions, .js .strip { opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; }
+.js .hero-sub { animation-delay: 2.3s; } .js .hero-actions { animation-delay: 2.45s; } .js .strip { animation-delay: 2.6s; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* paint-chip strip with the phone and trust facts */
+.strip { background: #fff; border-radius: 18px; padding: 14px; box-shadow: 0 30px 60px -32px rgba(40,30,20,.45); }
+.strip-top { padding: 12px 12px 16px; }
+.strip-top small { color: var(--muted); font-size: 14px; font-weight: 600; }
+.strip-top a { display: block; font-size: 32px; font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.strip-top a:hover { color: var(--brand); }
+.swatch { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 14px; padding: 8px; border-top: 1px solid var(--line); }
+.swatch i { height: 52px; border-radius: 10px; }
+.swatch b { display: block; color: var(--ink); font-size: 18px; line-height: 1.2; }
+.swatch span { font-size: 14px; color: var(--muted); }
+
+/* sections */
+.section { padding: 104px 0; }
+.head { max-width: 640px; margin-bottom: 48px; }
+.head p { margin-top: 14px; font-size: 18px; }
+
+/* services as paint chips */
+.chips { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.pchip { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 0 var(--line), 0 18px 40px -30px rgba(40,30,20,.5); transition: transform .3s cubic-bezier(.3,1.4,.6,1), box-shadow .3s; }
+.pchip:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: 0 1px 0 var(--line), 0 28px 50px -30px rgba(40,30,20,.55); }
+.pchip .sw { height: 110px; position: relative; display: flex; align-items: flex-end; padding: 14px; }
+.pchip .sw .ico { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.92); color: var(--brand); display: grid; place-items: center; }
+.pchip .txt { padding: 18px 18px 22px; }
+.pchip .code { font-size: 12px; font-weight: 800; letter-spacing: .1em; color: var(--muted); }
+.pchip h3 { margin: 4px 0 8px; }
+.pchip p { font-size: 15.5px; }
+
+/* try a color */
+.try { background: #fff; border-block: 1px solid var(--line); }
+.try-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
+.picks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.pick { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 16px 0 8px; border-radius: 12px; border: 0; background: var(--paper); font: inherit; font-size: 15px; font-weight: 700; color: var(--ink); cursor: pointer; box-shadow: inset 0 0 0 1.5px var(--line); transition: box-shadow .2s, transform .2s; }
+.pick:hover { transform: translateY(-2px); }
+.pick[aria-pressed="true"] { box-shadow: inset 0 0 0 2.5px var(--brand); }
+.pick i { width: 30px; height: 30px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); background: linear-gradient(135deg, var(--s) 0 62%, var(--dr) 62%); }
+.try-note { font-size: 14px; color: var(--muted); margin-top: 16px; }
+.house { width: 100%; height: auto; display: block; }
+.house .siding { fill: var(--siding); transition: fill .6s ease; }
+.house .trim { fill: var(--trim); transition: fill .6s ease; }
+.house .door { fill: var(--door); transition: fill .6s ease; }
+
+/* why us */
+.why { list-style: none; display: grid; gap: 22px; }
+.why li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; }
+.why .ico { width: 52px; height: 52px; border-radius: 14px; background: color-mix(in srgb, var(--accent) 16%, #fff); color: var(--brand); display: grid; place-items: center; }
+.why p { margin-top: 4px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.about-grid > div > p { margin-top: 16px; font-size: 18px; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 64px; }
+.reviews figure { background: #fff; border-radius: 16px; padding: 26px 26px 22px; border-left: 6px solid var(--accent); }
+.reviews blockquote { font-family: "DM Serif Display", Georgia, serif; font-size: 22px; line-height: 1.35; color: var(--ink); }
+.reviews figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); font-weight: 600; }
+
+/* area */
+.area { background: var(--brand); color: rgba(255,255,255,.85); }
+.area h2 { color: #fff; }
+.towns { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.towns li { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 12px; border-radius: 12px; background: rgba(255,255,255,.1); color: #fff; font-weight: 700; }
+.towns li::before { content: ""; width: 18px; height: 18px; border-radius: 5px; background: var(--accent); }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+.contact-lede { margin-top: 16px; font-size: 18px; }
+.big-phone { display: inline-block; margin-top: 22px; font-size: 34px; font-weight: 800; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.big-phone:hover { color: var(--brand); }
+.mail { display: block; margin-top: 6px; color: var(--muted); }
+.quote { background: #fff; border-radius: 20px; padding: 30px; box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(40,30,20,.5); display: grid; gap: 16px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field label { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--paper); color: var(--ink); }
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--brand); background: #fff; }
+.form-note { font-size: 14px; min-height: 1.4em; }
+.form-note.ok { color: var(--brand); font-weight: 700; }
+
+footer { padding: 34px 0 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.foot a { text-decoration: none; }
+
+/* scroll reveal */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--d, 0) * 90ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+.call-fab { display: none; }
+@media (max-width: 900px) {
+  .nav nav { display: none; }
+  .nav .btn .label { display: none; }
+  .nav .btn { width: 46px; padding: 0; }
+  .hero-body, .try-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-body { padding: 24px 0 80px; }
+  .section { padding: 76px 0; }
+  .roller { width: 54px; }
+  .pair { grid-template-columns: 1fr; }
+  .call-fab { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 20; box-shadow: 0 0 0 2px #fff, 0 12px 28px -10px rgba(0,0,0,.45); }
+  .call-fab { transition: opacity .25s, transform .25s; } .call-fab.away { opacity: 0; transform: translateY(24px); pointer-events: none; }
+  footer { padding-bottom: 96px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .coat { animation: none; transform: none; }
+  .roller { display: none; }
+  .js .hero h1 .w, .js .hero-sub, .js .hero-actions, .js .strip, .js .reveal { animation: none; opacity: 1; transform: none; transition: none; }
+  .house .siding, .house .trim, .house .door { transition: none; }
+}
+</style>
+<style>
+.vx-hero-photo { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+.vx-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, color-mix(in srgb, #1F3A6B 94%, #000) 0%, color-mix(in srgb, #1F3A6B 84%, transparent) 55%, color-mix(in srgb, #1F3A6B 62%, transparent) 100%); }
+.vx-band { padding: 28px 0 8px; }
+.vx-wide { padding-top: 0; }
+.vx-band .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: grid; gap: 14px; }
+.vx-band figure { margin: 0; overflow: hidden; border-radius: 18px; background: color-mix(in srgb, #1F3A6B 12%, #fff); }
+.vx-band img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.vx-band figure:hover img { transform: scale(1.04); }
+.vx-mosaic .vx-wrap { grid-template-columns: 1.6fr 1fr; grid-template-rows: 220px 220px; }
+.vx-mosaic figure:first-child { grid-row: span 2; }
+.vx-wide .vx-wrap { max-width: none; padding: 0; }
+.vx-wide figure { border-radius: 0; height: clamp(240px, 34vw, 440px); }
+.vx-duo .vx-wrap { grid-template-columns: 1fr 1fr; }
+.vx-duo figure { height: 340px; }
+.vx-duo figure:nth-child(2) { transform: translateY(36px); }
+.vx-duo { padding-bottom: 44px; }
+.vx-jobs { padding: 72px 0; }
+.vx-jobs .vx-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.vx-jobs h2 { margin-bottom: 8px; }
+.vx-jobs p.vx-note { color: inherit; opacity: .75; margin-bottom: 26px; max-width: 60ch; }
+.vx-frames { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.vx-frame { aspect-ratio: 4 / 3; border: 2px dashed color-mix(in srgb, #1F3A6B 35%, transparent); border-radius: 16px; display: grid; place-content: center; justify-items: center; gap: 8px; color: color-mix(in srgb, #1F3A6B 70%, #555); background: color-mix(in srgb, #D4A537 7%, transparent); font-size: 15px; font-weight: 600; text-align: center; padding: 12px; }
+.vx-real figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 16px; }
+.vx-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vx-credit { max-width: 1160px; margin: 0 auto; padding: 8px 24px 18px; font-size: 12px; opacity: .7; }
+.vx-credit a { color: inherit; }
+@media (max-width: 760px) {
+  .vx-mosaic .vx-wrap { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 140px; }
+  .vx-mosaic figure:first-child { grid-row: auto; grid-column: span 2; }
+  .vx-duo figure { height: 220px; }
+  .vx-duo figure:nth-child(2) { transform: translateY(20px); }
+  .vx-frames { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .vx-band img { transition: none; } }
+</style>
+</head>
+<body>
+<div class="demo-bar">Preview built for Royal Painting. This site isn't live yet.</div>
+<header class="hero" id="top">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="nap" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 3h6" stroke="#000" stroke-opacity=".12"/></pattern></defs></svg>
+  <div class="coat c1" aria-hidden="true"></div><div class="roller c1" aria-hidden="true"><svg viewBox="0 0 120 200" preserveAspectRatio="none" aria-hidden="true">
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="var(--fresh)"/>
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="url(#nap)" opacity=".5"/>
+  <rect x="84" y="10" width="7" height="180" rx="3.5" fill="#fff" opacity=".55"/>
+  <path d="M97 100 H52 L22 170" fill="none" stroke="#8b8f96" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="2" y="160" width="34" height="16" rx="8" transform="rotate(-62 19 168)" fill="var(--handle)"/>
+</svg></div><div class="coat c2" aria-hidden="true"></div><div class="roller c2" aria-hidden="true"><svg viewBox="0 0 120 200" preserveAspectRatio="none" aria-hidden="true">
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="var(--fresh)"/>
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="url(#nap)" opacity=".5"/>
+  <rect x="84" y="10" width="7" height="180" rx="3.5" fill="#fff" opacity=".55"/>
+  <path d="M97 100 H52 L22 170" fill="none" stroke="#8b8f96" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="2" y="160" width="34" height="16" rx="8" transform="rotate(-62 19 168)" fill="var(--handle)"/>
+</svg></div><div class="coat c3" aria-hidden="true"></div><div class="roller c3" aria-hidden="true"><svg viewBox="0 0 120 200" preserveAspectRatio="none" aria-hidden="true">
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="var(--fresh)"/>
+  <rect x="78" y="2" width="38" height="196" rx="16" fill="url(#nap)" opacity=".5"/>
+  <rect x="84" y="10" width="7" height="180" rx="3.5" fill="#fff" opacity=".55"/>
+  <path d="M97 100 H52 L22 170" fill="none" stroke="#8b8f96" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="2" y="160" width="34" height="16" rx="8" transform="rotate(-62 19 168)" fill="var(--handle)"/>
+</svg></div>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top"><span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="15" height="6" rx="2"/><path d="M18 6h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-8v3"/><rect x="10" y="14" width="4" height="8" rx="1"/></svg></span>Royal Painting</a>
+      <nav aria-label="Sections"><a href="#services">Services</a><a href="#colors">Colors</a><a href="#about">About</a><a href="#contact">Get a quote</a></nav>
+      <a class="btn btn-brand btn-sm" href="tel:2087131069" aria-label="Call us at (208) 713-1069"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="label">(208) 713-1069</span></a>
+    </div>
+    <div class="hero-body">
+      <div>
+        <h1><span class="w" style="--i:0">Boise</span> <span class="w" style="--i:1">house</span> <span class="w" style="--i:2">painting,</span> <span class="w" style="--i:3">inside</span> <span class="w" style="--i:4">and</span> <span class="w" style="--i:5">out</span></h1>
+        <p class="hero-sub">Royal Painting handles interiors, exteriors, cabinets, doors and baseboards across the Treasure Valley and up to McCall. Call to talk through your project.</p>
+        <div class="hero-actions">
+          <a class="btn btn-brand" href="#contact">Request a quote</a>
+          <a class="btn btn-line" href="tel:2087131069"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+        </div>
+      </div>
+      <aside class="strip" aria-label="Contact">
+        <div class="strip-top"><small>Call us for a quote</small><a href="tel:2087131069">(208) 713-1069</a></div>
+        <div class="swatch"><i style="background:#1F3A6B"></i><div><b>5.0</b><span>Houzz rating (1 review)</span></div></div>
+        <div class="swatch"><i style="background:#D4A537"></i><div><b>10 towns</b><span>Served, Boise to McCall</span></div></div>
+        <div class="swatch"><i style="background:#a3b29c"></i><div><b>8</b><span>Services, inside and out</span></div></div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="vx-band vx-duo" aria-hidden="true"><div class="vx-wrap"><figure><img src="img/scene-4649496.jpg" alt="" loading="lazy"></figure><figure><img src="img/scene-49612.jpg" alt="" loading="lazy"></figure></div></section><section class="section" id="services">
+    <div class="wrap">
+      <div class="head reveal"><span class="eyebrow">Services</span><h2>What we paint</h2><p>From one door to a whole house, inside and out. We also handle the prep work, like washing and small repairs, so the paint lasts.</p></div>
+      <ul class="chips">
+        <li class="pchip reveal" style="--d:0"><div class="sw" style="background:#1F3A6B"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span></div><div class="txt"><span class="code">No. 01</span><h3>Interior Painting</h3><p>Walls, ceilings and trim in one room or the whole house, done cleanly and carefully.</p></div></li>
+        <li class="pchip reveal" style="--d:1"><div class="sw" style="background:#a3b29c"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="15" height="6" rx="2"/><path d="M18 6h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-8v3"/><rect x="10" y="14" width="4" height="8" rx="1"/></svg></span></div><div class="txt"><span class="code">No. 02</span><h3>Exterior Painting</h3><p>Siding, trim and outdoor surfaces painted to hold up to Idaho sun and winters.</p></div></li>
+        <li class="pchip reveal" style="--d:2"><div class="sw" style="background:#b6775b"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a10 10 0 1 1 10-10c0 2.2-1.8 3.5-4 3.5h-1.8a1.7 1.7 0 0 0-1.2 2.9c.3.3.5.8.5 1.2A2.4 2.4 0 0 1 12 22z"/><circle cx="7.5" cy="10.5" r="1.2"/><circle cx="10.5" cy="6.5" r="1.2"/><circle cx="15.5" cy="7" r="1.2"/></svg></span></div><div class="txt"><span class="code">No. 03</span><h3>Repaints</h3><p>A fresh coat for tired or outdated paint, whether you&#39;re keeping the color or changing it.</p></div></li>
+        <li class="pchip reveal" style="--d:3"><div class="sw" style="background:#D4A537"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg></span></div><div class="txt"><span class="code">No. 04</span><h3>Cabinet Painting</h3><p>Give your kitchen or bathroom cabinets a new look without replacing them.</p></div></li>
+        <li class="pchip reveal" style="--d:0"><div class="sw" style="background:#5b6b73"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg></span></div><div class="txt"><span class="code">No. 05</span><h3>Door Painting</h3><p>Front doors, interior doors and garage doors painted with a smooth, even finish.</p></div></li>
+        <li class="pchip reveal" style="--d:1"><div class="sw" style="background:#c8bead"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="txt"><span class="code">No. 06</span><h3>Baseboard Painting</h3><p>Crisp, clean baseboards and trim that finish off a room.</p></div></li>
+        <li class="pchip reveal" style="--d:2"><div class="sw" style="background:#7d5a50"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span></div><div class="txt"><span class="code">No. 07</span><h3>Pressure Washing</h3><p>We wash away dirt and grime so new paint bonds well, and to freshen up surfaces on their own.</p></div></li>
+        <li class="pchip reveal" style="--d:3"><div class="sw" style="background:#8fa3b8"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div><div class="txt"><span class="code">No. 08</span><h3>Minor Repairs</h3><p>Small fixes to the surfaces we paint, so the new coat goes on over a solid base.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section try" id="colors">
+    <div class="wrap try-grid">
+      <div class="reveal">
+        <span class="eyebrow">Try a color</span>
+        <h2>Picture it before the first coat</h2>
+        <p class="contact-lede">Tap a color scheme to see it on the house. It's a quick way to narrow down what you like before you call.</p>
+        <div class="picks" role="group" aria-label="Color schemes">
+          <button class="pick" type="button" aria-pressed="true" data-s="#ece8df" data-t="#ffffff" data-d="#2f3b4c" style="--s:#ece8df;--dr:#2f3b4c"><i></i>Classic white</button><button class="pick" type="button" aria-pressed="false" data-s="#a3b29c" data-t="#f4f1ea" data-d="#5b3a29" style="--s:#a3b29c;--dr:#5b3a29"><i></i>Sage</button><button class="pick" type="button" aria-pressed="false" data-s="#2f4058" data-t="#f5f3ee" data-d="#c8553d" style="--s:#2f4058;--dr:#c8553d"><i></i>Navy</button><button class="pick" type="button" aria-pressed="false" data-s="#c8bead" data-t="#fbf9f5" data-d="#36454f" style="--s:#c8bead;--dr:#36454f"><i></i>Greige</button><button class="pick" type="button" aria-pressed="false" data-s="#3d4045" data-t="#e9e6e0" data-d="#d9a441" style="--s:#3d4045;--dr:#d9a441"><i></i>Charcoal</button><button class="pick" type="button" aria-pressed="false" data-s="#b6775b" data-t="#f3ede4" data-d="#2e3a33" style="--s:#b6775b;--dr:#2e3a33"><i></i>Clay</button>
+        </div>
+        <p class="try-note">Screen colors are approximate. Always check real paint samples.</p>
+      </div>
+      <div class="reveal" style="--d:2">
+        <svg class="house" id="house" viewBox="0 0 560 400" role="img" aria-label="A house showing the selected color scheme" style="--siding:#ece8df;--trim:#ffffff;--door:#2f3b4c">
+          <defs><pattern id="lap" width="10" height="16" patternUnits="userSpaceOnUse"><path d="M0 15.5h10" stroke="#000" stroke-opacity=".13"/></pattern></defs>
+          <rect x="0" y="372" width="560" height="28" rx="6" fill="#cfd8c4"/>
+          <path d="M60 190 L280 40 L500 190Z" fill="#4a4f57"/>
+          <rect class="trim" x="40" y="186" width="480" height="14" rx="4"/>
+          <rect class="siding" x="76" y="200" width="408" height="172"/>
+          <rect x="76" y="200" width="408" height="172" fill="url(#lap)"/>
+          <path class="siding" d="M120 186 L280 76 L440 186Z"/>
+          <path d="M120 186 L280 76 L440 186Z" fill="url(#lap)"/>
+          <circle class="trim" cx="280" cy="140" r="22"/><circle cx="280" cy="140" r="15" fill="#9fc3dd"/>
+          <rect class="trim" x="66" y="200" width="14" height="172"/><rect class="trim" x="480" y="200" width="14" height="172"/>
+          <g><rect class="trim" x="112" y="232" width="98" height="86" rx="4"/><rect x="121" y="241" width="80" height="68" fill="#9fc3dd"/><path d="M161 241v68M121 275h80" stroke="var(--trim)" stroke-width="5"/></g>
+          <g><rect class="trim" x="350" y="232" width="98" height="86" rx="4"/><rect x="359" y="241" width="80" height="68" fill="#9fc3dd"/><path d="M399 241v68M359 275h80" stroke="var(--trim)" stroke-width="5"/></g>
+          <rect class="trim" x="240" y="250" width="80" height="122" rx="4"/>
+          <rect class="door" x="250" y="260" width="60" height="112" rx="3"/>
+          <rect x="258" y="270" width="44" height="34" rx="2" fill="#fff" opacity=".18"/>
+          <circle cx="298" cy="320" r="4" fill="#d9c27a"/>
+          <rect x="228" y="368" width="104" height="8" rx="3" fill="#b9b2a6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal"><span class="eyebrow">About</span><h2>Why homeowners call us</h2><p>Royal Painting LLC is a Boise painting company that takes on repaints, interior and exterior work, doors, cabinets and baseboards. We like to say we always do more. That means pressure washing surfaces before we paint them and fixing the small problems we find along the way, so the finished job looks right. We work all over the Treasure Valley, from Boise and Meridian out to Caldwell and Melba, and as far north as McCall.</p></div>
+        <ul class="why">
+          <li class="reveal" style="--d:1"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2 2 0 0 0 1.5 1.1l5.2.8a.5.5 0 0 1 .3.9l-3.8 3.6a2 2 0 0 0-.6 1.8l.9 5.2a.5.5 0 0 1-.8.6l-4.6-2.5a2 2 0 0 0-1.9 0l-4.6 2.5a.5.5 0 0 1-.8-.6l.9-5.2a2 2 0 0 0-.6-1.8L1.7 9.8a.5.5 0 0 1 .3-.9l5.2-.8a2 2 0 0 0 1.5-1.1z"/></svg></span><div><h3>We always do more</h3><p>That&#39;s our motto. Pressure washing and minor repairs are part of what we offer, so the prep gets done right before any paint goes on.</p></div></li>
+          <li class="reveal" style="--d:2"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><div><h3>One crew for the whole house</h3><p>Interiors, exteriors, cabinets, doors and baseboards. You can hire one painter for everything on your list.</p></div></li>
+          <li class="reveal" style="--d:3"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></span><div><h3>Boise to McCall</h3><p>We work across the Treasure Valley, including Meridian, Nampa, Eagle and Kuna, and we&#39;ll go up to McCall too.</p></div></li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="section area" id="area">
+    <div class="wrap reveal">
+      <span class="eyebrow" style="color:#fff">Service area</span>
+      <h2>Where we paint</h2>
+      <p class="contact-lede">Based in Boise, we work throughout the Treasure Valley and up into the mountains at McCall. Not sure if you&#39;re in our area? Give us a call.</p>
+      <ul class="towns"><li>Boise</li><li>Meridian</li><li>Nampa</li><li>Caldwell</li><li>Eagle</li><li>Kuna</li><li>Star</li><li>Middleton</li><li>Melba</li><li>McCall</li></ul>
+    </div>
+  </section>
+
+  <section class="vx-jobs" aria-label="Recent jobs"><div class="vx-wrap">
+  <h2>Recent jobs</h2>
+  <p class="vx-note">Preview: this is where Royal Painting's own job photos go. Send a few before-and-afters and they drop right in.</p>
+  <div class="vx-frames"><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div><div class="vx-frame"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Your job photo here</span></div></div>
+</div></section><section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Get a quote</span>
+        <h2>Ready for fresh paint? Give us a call.</h2>
+        <p class="contact-lede">Tell us about the project and we'll get back to you. Rather talk? Give us a call.</p>
+        <a class="big-phone" href="tel:2087131069">(208) 713-1069</a>
+        
+      </div>
+      <form class="quote reveal" id="quote-form" style="--d:2">
+        <div class="pair">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" required name="name" autocomplete="name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" required name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-town">Town</label><select id="f-town" name="town"><option value="">Select your town</option><option>Boise</option><option>Meridian</option><option>Nampa</option><option>Caldwell</option><option>Eagle</option><option>Kuna</option><option>Star</option><option>Middleton</option><option>Melba</option><option>McCall</option></select></div>
+        <div class="field"><label for="f-svc">Project</label><select id="f-svc" name="service"><option value="">Select a service</option><option>Interior Painting</option><option>Exterior Painting</option><option>Repaints</option><option>Cabinet Painting</option><option>Door Painting</option><option>Baseboard Painting</option><option>Pressure Washing</option><option>Minor Repairs</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="f-det">Details</label><textarea id="f-det" name="details" placeholder="Inside or outside, rooms or size, colors you have in mind"></textarea></div>
+        <button class="btn btn-brand" type="submit">Request a quote</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Royal Painting LLC, Boise, ID</span>
+    <a href="tel:2087131069">(208) 713-1069</a>
+  </div>
+<p class="vx-credit">Stock photos: <a href="https://pixabay.com/photos/house-architecture-front-yard-1836070/">Pexels</a>, <a href="https://pixabay.com/photos/kitchen-box-interior-pen-design-4649496/">LiudmilaB</a>, <a href="https://pixabay.com/photos/gate-garage-garage-door-red-49612/">Hans</a>, <a href="https://pixabay.com/photos/painting-paint-roller-wall-3414650/">vitivo</a> on Pixabay.</p></footer>
+<a class="btn btn-brand call-fab" href="tel:2087131069"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call us</a>
+<script>(() => { const f = document.querySelector(".call-fab"); if (!f) return; const s = () => f.classList.toggle("away", scrollY < innerHeight * .6); s(); addEventListener("scroll", s, { passive: true }); })()</script>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // rollers are only needed for the opening animation
+  document.querySelectorAll(".roller").forEach(r => r.addEventListener("animationend", () => r.remove()));
+
+  // try-a-color house: tap to switch; cycles on its own until someone taps
+  const house = document.getElementById("house");
+  const picks = [...document.querySelectorAll(".pick")];
+  let auto = null;
+  const show = b => {
+    house.style.setProperty("--siding", b.dataset.s);
+    house.style.setProperty("--trim", b.dataset.t);
+    house.style.setProperty("--door", b.dataset.d);
+    picks.forEach(p => p.setAttribute("aria-pressed", String(p === b)));
+  };
+  picks.forEach(b => b.addEventListener("click", () => { clearInterval(auto); auto = null; show(b); }));
+  const cycle = () => {
+    if (reduce || auto !== null) return;
+    let i = 0;
+    auto = setInterval(() => { i = (i + 1) % picks.length; show(picks[i]); }, 2200);
+  };
+
+  const targets = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || reduce) { targets.forEach(t => t.classList.add("in")); return; }
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("in"); io.unobserve(e.target);
+    if (e.target.contains(house)) cycle();
+  }), { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => io.observe(t));
+})();
+
+document.getElementById("quote-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const note = document.getElementById("form-note");
+  note.classList.add("ok");
+  note.textContent = "Preview only. On the live site, requests go straight to your phone and inbox.";
+});
+</script>
+</body>
+</html>
